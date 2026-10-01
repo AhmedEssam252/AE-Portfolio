@@ -10,6 +10,8 @@ const I18N = {
     filterMoon: "أكاديمية مون",
     filterWasalna: "منصة وصلنا",
     filterBmo: "روبوت BMO الذكي",
+    filterAlf: "مؤسسة آنا ليند الدولية",
+    filterMasters: "ماسترز جلوبال للمحاسبة",
     btnCollection: "أرشيف الأعمال",
     btnCurator: "عن المهندس",
     shelfHint: "اضغط على أي كتاب لفتح الكتيّب التفاعلي واستعراض فصول وأدوار النظام",
@@ -45,6 +47,8 @@ const I18N = {
     filterMoon: "Moon Academy",
     filterWasalna: "Wasalna Platform",
     filterBmo: "BMO AI Robot",
+    filterAlf: "Anna Lindh Foundation",
+    filterMasters: "Masters Global",
     btnCollection: "The Collection",
     btnCurator: "Curator / About",
     shelfHint: "Click on any manual to open the interactive flip-book and explore system architecture",
@@ -2355,6 +2359,462 @@ const PROJECTS = [
         ]
       }
     ]
+  },
+
+  // 4. ANNA LINDH FOUNDATION (Euro-Mediterranean Intergovernmental Civil Society & Cultural Dialogue)
+  {
+    id: "anna-lindh-foundation",
+    isMasterBook: true,
+    category: "alf",
+    code: "FIELD MANUAL • VOL. 04",
+    year: "2024–2026",
+    rating: "✦ ✦ ✦ ✦ ✦",
+    logo: "imgs/Anna lindh Foundation/alf_logo.png",
+    liveUrl: "https://alf.website/en/",
+    translations: {
+      ar: {
+        title: "مؤسسة آنا ليند الأورومتوسطية",
+        subtitle: "البوابة الرقمية الرسمية وشبكة الحوار الثقافي لـ 43 دولة أورومتوسطية",
+        lead: "منصة ويب حكومية دولية متكاملة تم تصميمها وتطويرها لمؤسسة آنا ليند الأورومتوسطية (ALF) ومقرها الإسكندرية. تربط المنصة بين أكثر من 4,500 مؤسسة مجتمع مدني عبر 43 دولة عضواً في الاتحاد من أجل المتوسط، وتتضمن إدارة المنح، تقويم الفعاليات الإقليمية التفاعلي، مركز مصادر الحوار الثقافي، والسياسات الشبابية المشتركة بدعم متعدد اللغات.",
+        coverMeta: "منصة دولية أورومتوسطية • 2024–2026"
+      },
+      en: {
+        title: "Anna Lindh Foundation",
+        subtitle: "Official Euro-Med Portal & Civil Society Network for 43 Member States",
+        lead: "An international intergovernmental portal architected and engineered for the Anna Lindh Foundation (ALF) headquartered in Alexandria. Connecting over 4,500 civil society organizations across 43 Euro-Mediterranean nations, the platform features grants management, an interactive multilateral events calendar, an intercultural dialogue resource knowledge hub, and multilingual civil society engagement.",
+        coverMeta: "Euro-Med Intergovernmental Portal • 2024–2026"
+      }
+    },
+    chapters: [
+      // Chapter 1: Official Portal & Euro-Med Civil Society Network
+      {
+        id: "alf-portal-network",
+        icon: "🏛️",
+        translations: {
+          ar: {
+            tabLabel: "01. المنصة والشبكة المدنية",
+            roleTitle: "البوابة الرسمية وشبكة المجتمع المدني",
+            roleSubtitle: "المعمارية المؤسسية، دليل الشبكات، ومركز المعرفة المشترك",
+            lead: "البوابة الرقمية المركزية لمؤسسة آنا ليند بالحوض المتوسطي؛ صُممت لتكون جسراً معرفياً وثقافياً يجمع منظمات المجتمع المدني، الهيئات الأكاديمية، والشركاء الدوليين مع توفير بحث وتصنيف فائق الدقة.",
+            specs: [
+              { label: "نوع المنصة", val: "Intergovernmental Portal & Network" },
+              { label: "النطاق الجغرافي", val: "43 دولة أورومتوسطية (Euro-Med)" },
+              { label: "الرابط المباشر", val: '<a href="https://alf.website/en/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold); text-decoration:underline;">alf.website ↗</a>' },
+              { label: "الدور الهنسي", val: "Senior Full-Stack Web Developer & UI/UX" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "معمارية البوابة الدولية متعددة اللغات (Multilingual)",
+                desc: "دعم سلس للغات الثلاث الرسمية (العربية، الإنجليزية، الفرنسية) مع مراعاة كاملة لاتجاهات RTL/LTR والتوافق مع المعايير الحكومية الدولية."
+              },
+              {
+                num: "02",
+                title: "دليل شبكة المجتمع المدني الكبرى (4,500+ Member Network)",
+                desc: "فهرسة وتصنيف أكثر من 4,500 منظمة غير حكومية وهيئة أكاديمية ومؤسسة شبابية في 43 دولة عبر الحوض المتوسط."
+              },
+              {
+                num: "03",
+                title: "مركز مصادر الحوار الثقافي (Resource Knowledge Hub)",
+                desc: "محرك بحث وتصفية متعدد الأبعاد حسب المجال الموضوعي، الدولة، الإقليم، واللغة لمئات الأبحاث والسياسات الإقليمية."
+              },
+              {
+                num: "04",
+                title: "واجهة تعريفية احترافية بالكوادر والشركاء المؤسسيين",
+                desc: "عرض منظم لفريق الأمانة العامة للاتصال المؤسسي وشركاء السياسات كالاتحاد الأوروبي ومكتبة الإسكندرية وCOPEAM."
+              }
+            ],
+            tech: ["Vue.js / Nuxt / Modern JS", "Multilingual i18n (AR/EN/FR)", "RESTful APIs / CMS Architecture", "Responsive High-Performance UI", "SEO & Open Data Metadata"]
+          },
+          en: {
+            tabLabel: "01. Portal & Civil Society",
+            roleTitle: "Official Portal & Civil Society Network",
+            roleSubtitle: "Enterprise Architecture, Network Directory & Intercultural Knowledge Hub",
+            lead: "The central digital gateway for the Anna Lindh Euro-Mediterranean Foundation, engineered as an institutional knowledge bridge uniting NGOs, academic hubs, and global partners across 43 member states.",
+            specs: [
+              { label: "Platform Category", val: "Intergovernmental Portal & Network" },
+              { label: "Geographical Scope", val: "43 Euro-Med Member States" },
+              { label: "Live Website", val: '<a href="https://alf.website/en/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold); text-decoration:underline;">alf.website ↗</a>' },
+              { label: "Role", val: "Senior Full-Stack Web Developer & UI/UX" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "Multilingual Enterprise Architecture (AR / EN / FR)",
+                desc: "Full bidirectional i18n engine supporting Arabic (RTL), English, and French (LTR) compliant with intergovernmental web standards."
+              },
+              {
+                num: "02",
+                title: "Pan-Mediterranean Civil Society Network (4,500+ Members)",
+                desc: "Indexed directory empowering 4,500+ grassroots organizations, think tanks, and educational bodies across 43 countries."
+              },
+              {
+                num: "03",
+                title: "Intercultural Dialogue Resource Knowledge Hub",
+                desc: "Faceted search and discovery system categorized by thematic focus, nation, region, and publication language."
+              },
+              {
+                num: "04",
+                title: "Secretariat Governance & Institutional Partners",
+                desc: "Structured team directory and corporate communications portal featuring global backers including the EU and Bibliotheca Alexandrina."
+              }
+            ],
+            tech: ["Vue.js / Nuxt / Modern JS", "Multilingual i18n (AR/EN/FR)", "RESTful APIs / CMS Architecture", "Responsive High-Performance UI", "SEO & Open Data Metadata"]
+          }
+        },
+        steps: [
+          {
+            image: "imgs/Anna lindh Foundation/1.png",
+            translations: {
+              ar: {
+                tab: "01. البوابة الرسمية",
+                title: "الواجهة الرئيسية والرسالة الأورومتوسطية (ALF Mission)",
+                caption: "البوابة الرسمية لمؤسسة آنا ليند: إلهام المعرفة، تحفيز العمل، وتوحيد الثقافات عبر المتوسط",
+                hotspots: [
+                  { x: 10, y: 4, title: "الهوية البصرية الرسمية (ALF Euromed)", desc: "شعار الفسيفساء المتوسطية الدال على الدول الـ 43 وتمازج الثقافات.", tech: "SVG Brand Vector Assets" },
+                  { x: 78, y: 6, title: "الملاحة المؤسسية والدعوات المفتوحة (Open Calls)", desc: "وصول سريع لأقسام التعريف، الشبكات، والمنح وبرامج التمويل المفتوحة.", tech: "Modular Navigation Header" },
+                  { x: 94, y: 2, title: "التحويل اللحظي للغات (EN / FR / AR)", desc: "تبديل فوري بين الإنجليزية والفرنسية والعربية مع تهيئة كاملة لواجهة RTL.", tech: "Trilingual State Hydration" },
+                  { x: 50, y: 35, title: "قسم البطولة والتفاعل الإنساني (Inspiring Knowledge)", desc: "عرض سينمائي ديناميكي يبرز ملتقيات الشباب والتواصل الثقافي المباشر.", tech: "Hero Carousel & Media Optimization" },
+                  { x: 50, y: 92, title: "الرسالة التأسيسية للمؤسسة (Our Mission)", desc: "بيان أهداف المؤسسة المنشأة عام 2005 بالإسكندرية لترسيخ الحوار معياراً أساسياً.", tech: "Semantic Typography Hierarchy" }
+                ]
+              },
+              en: {
+                tab: "01. Main Portal",
+                title: "Official Homepage & Euro-Mediterranean Mission",
+                caption: "The official gateway of Anna Lindh Foundation: Inspiring Knowledge, Driving Action, Uniting Cultures",
+                hotspots: [
+                  { x: 10, y: 4, title: "Official Visual Identity (ALF Euromed)", desc: "Mediterranean mosaic emblem representing 43 member nations and cultural synergy.", tech: "SVG Brand Vector Assets" },
+                  { x: 78, y: 6, title: "Institutional Navigation & Open Calls", desc: "Quick access to organizational governance, civil society networks, and grant calls.", tech: "Modular Navigation Header" },
+                  { x: 94, y: 2, title: "Trilingual Switcher (EN / FR / AR)", desc: "Instant switching between English, French, and Arabic with seamless RTL layout shifts.", tech: "Trilingual State Hydration" },
+                  { x: 50, y: 35, title: "Hero Stage (Inspiring Knowledge, Driving Action)", desc: "Cinematic visual presentation celebrating youth dialogues and face-to-face exchanges.", tech: "Hero Carousel & Media Optimization" },
+                  { x: 50, y: 92, title: "Foundational Mission Statement", desc: "Articulates the mandate established in Alexandria in 2005 to foster cultural cooperation.", tech: "Semantic Typography Hierarchy" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/9.png",
+            translations: {
+              ar: {
+                tab: "02. شبكة المجتمع المدني",
+                title: "شبكة المجتمع المدني الأورومتوسطية (4,500+ عضو)",
+                caption: "أكبر شبكة مجتمع مدني تضم أكثر من 4,500 هيئة ومنظمة غير حكومية عبر 43 دولة",
+                hotspots: [
+                  { x: 50, y: 20, title: "رمزية الـ 43 حصاة في الشعار", desc: "تمثيل بصري لكل صوت وكيان وطني مترابط ضمن مظلة متوسطية مشتركة.", tech: "Dynamic SVG Composition" },
+                  { x: 50, y: 70, title: "بوابة الانضمام للشبكة (Join Our Network)", desc: "تدفق تسجيل إلكتروني للمنظمات غير الحكومية والمراكز البحثية والجمعيات.", tech: "Digital Onboarding Pipeline" },
+                  { x: 65, y: 88, title: "تكوين الشبكة المدنية وتنوع مجالاتها", desc: "تغطية المنظمات الأهلية، المراكز الأكاديمية، وسائل الإعلام، والمبادرات الشعبية.", tech: "Categorized Entity Directory" },
+                  { x: 30, y: 92, title: "توثيق التجمعات والملتقيات الحية", desc: "معرض صور توثيقي للوفود الوطنية وقادة العمل المدني في العواصم المتوسطية.", tech: "Documentary Visual Gallery" }
+                ]
+              },
+              en: {
+                tab: "02. Civil Society Network",
+                title: "Euro-Med Civil Society Network (4,500+ Members)",
+                caption: "The largest regional civil society alliance uniting NGOs, universities, and grassroots initiatives across 43 countries",
+                hotspots: [
+                  { x: 50, y: 20, title: "Symbolism of the 43 Pebbles", desc: "Visual storytelling depicting every national voice unified in an inclusive shared space.", tech: "Dynamic SVG Composition" },
+                  { x: 50, y: 70, title: "Join Our Network Portal Call-to-Action", desc: "Online application and validation workflow for NGOs and research institutions.", tech: "Digital Onboarding Pipeline" },
+                  { x: 65, y: 88, title: "Network Taxonomy & Entity Classification", desc: "Encompasses think tanks, cultural bodies, social enterprises, and grassroots groups.", tech: "Categorized Entity Directory" },
+                  { x: 30, y: 92, title: "Documented Regional Assemblies", desc: "Documentary photography showcasing civil society leaders across Mediterranean capitals.", tech: "Documentary Visual Gallery" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/7.png",
+            translations: {
+              ar: {
+                tab: "03. مركز المعرفة والمصادر",
+                title: "مركز مصادر الحوار الثقافي (Intercultural Dialogue Hub)",
+                caption: "محرك بحث متطور ومستودع معرفي للأبحاث والدراسات والمواد التدريبية",
+                hotspots: [
+                  { x: 50, y: 35, title: "زر تقديم مادة ومصدر بحثي (Submit a Resource)", desc: "يتيح للشبكات الوطنية مشاركة دراساتها وأدلتها المعرفية مع عموم الباحثين.", tech: "User Content Ingestion Form" },
+                  { x: 50, y: 54, title: "محرك البحث النصي اللحظي", desc: "بحث فوري في العناوين والملخصات والكلمات المفتاحية للأبحاث والتقارير.", tech: "Real-time Debounced Search" },
+                  { x: 26, y: 65, title: "التصفية حسب المجال الموضوعي (Thematic Area)", desc: "تصنيفات تشمل التعليم، الحوار الثقافي، الشباب، والهجرة والديمقراطية.", tech: "Multi-Facet Filtering Engine" },
+                  { x: 42, y: 65, title: "التصفية الجغرافية حسب الدولة (Country)", desc: "فرز فوري للمصادر حسب الدولة الأورومتوسطية صاحبة الدراسة.", tech: "Geographical Data Queries" },
+                  { x: 74, y: 65, title: "التصفية اللغوية للوثائق (Language)", desc: "تحديد لغة المنشور (عربية، إنجليزية، فرنسية، وغيرها).", tech: "Language Query Parameter" },
+                  { x: 50, y: 92, title: "بطاقة المنشورات والأبحاث (V-Dem Publication)", desc: "عرض تفصيلي للعنوان، الملخص، جهة النشر، ورابط التحميل المباشر للـ PDF.", tech: "Publication Card Template" }
+                ]
+              },
+              en: {
+                tab: "03. Knowledge Hub",
+                title: "Intercultural Dialogue Resource Centre",
+                caption: "Advanced faceted repository for policy studies, educational tools, and research papers",
+                hotspots: [
+                  { x: 50, y: 35, title: "Submit a Resource Ingestion Pipeline", desc: "Empowers national networks to contribute policy briefs, datasets, and methodologies.", tech: "User Content Ingestion Form" },
+                  { x: 50, y: 54, title: "Instant Full-Text Search Field", desc: "Debounced live lookup querying titles, abstracts, and index keywords.", tech: "Real-time Debounced Search" },
+                  { x: 26, y: 65, title: "Thematic Area Filtering Dropdown", desc: "Filters publications by education, youth, democracy, migration, and culture.", tech: "Multi-Facet Filtering Engine" },
+                  { x: 42, y: 65, title: "Country & Territory Geographical Selector", desc: "Instant retrieval of national studies published across the 43 member states.", tech: "Geographical Data Queries" },
+                  { x: 74, y: 65, title: "Document Language Filter", desc: "Isolates research published in Arabic, English, French, or regional languages.", tech: "Language Query Parameter" },
+                  { x: 50, y: 92, title: "Publication Card Item (e.g. V-Dem)", desc: "Structured presentation of executive summary, authoring body, and downloadable PDF.", tech: "Publication Card Template" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/5.png",
+            translations: {
+              ar: {
+                tab: "04. فريق الأمانة العامة",
+                title: "فريق الأمانة العامة والاتصال المؤسسي (Meet Our Team)",
+                caption: "سجل كوادر الأمانة العامة: مصفوفة تفاعلية تعرض مسؤولي الاتصال والشراكات الرقمية",
+                hotspots: [
+                  { x: 50, y: 16, title: "عنوان ورسالة الأمانة العامة بالإسكندرية", desc: "تأكيد على تنوع خلفيات الفريق وتفانيهم في تعزيز التعاون الأورومتوسطي.", tech: "Editorial Mission Header" },
+                  { x: 50, y: 34, title: "التصنيف الإداري: الاتصال المؤسسي", desc: "تقسيم الأقسام (Corporate Communication) مع إمكانية التمرير للقطاعات الأخرى.", tech: "Department Carousel Header" },
+                  { x: 10, y: 60, title: "مسؤولة الاتصال والظهور (Communication & Visibility)", desc: "بطاقة تعريفية بالصورة الاحترافية، الاسم، والمسمى الوظيفي المعتمد.", tech: "Staff Profile Component" },
+                  { x: 30, y: 60, title: "مسؤولة الشراكات والاتصال (Partnerships Officer)", desc: "تغطية قنوات التعاون المشترك مع المنظمات الإقليمية.", tech: "Staff Profile Component" },
+                  { x: 50, y: 60, title: "أخصائية الوسائط والمحتوى الرقمي (Digital Media)", desc: "إدارة المحتوى الرقمي المتعدد ونشر الحملات التوعوية.", tech: "Staff Profile Component" },
+                  { x: 98, y: 66, title: "أزرار التصفح السلس للكوادر (Team Slider Controls)", desc: "تصفح أفقي متجاوب ومريح يتيح التنقل بين أعضاء الأمانة العامة كافة.", tech: "Fluid Touch-Enabled Slider" }
+                ]
+              },
+              en: {
+                tab: "04. Secretariat Team",
+                title: "Secretariat Team & Corporate Communications",
+                caption: "Interactive staff directory spotlighting communication officers, media specialists, and leadership",
+                hotspots: [
+                  { x: 50, y: 16, title: "Secretariat Dedication Statement", desc: "Highlights multicultural talent united in advancing dialogue and regional cooperation.", tech: "Editorial Mission Header" },
+                  { x: 50, y: 34, title: "Departmental Filter: Corporate Communication", desc: "Segments staff cards by functional divisions with smooth carousel transitions.", tech: "Department Carousel Header" },
+                  { x: 10, y: 60, title: "Communication & Visibility Officer Card", desc: "Profile card with high-resolution portrait, formal title, and operational focus.", tech: "Staff Profile Component" },
+                  { x: 30, y: 60, title: "Communications & Partnerships Officer", desc: "Showcases liaisons handling bilateral accords and inter-institutional alliances.", tech: "Staff Profile Component" },
+                  { x: 50, y: 60, title: "Digital Media & Content Specialist", desc: "Coordinates trilingual web communications and multimedia awareness drives.", tech: "Staff Profile Component" },
+                  { x: 98, y: 66, title: "Smooth Slider Navigation Controls", desc: "Hardware-accelerated touch carousel controls for cycling through staff roster.", tech: "Fluid Touch-Enabled Slider" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/6.png",
+            translations: {
+              ar: {
+                tab: "05. الشركاء الدوليون",
+                title: "شركاء حوار السياسات والمؤسسات الدولية الداعمة",
+                caption: "شبكة الشركاء الاستراتيجيين: المفوضية الأوروبية، مكتبة الإسكندرية، وائتلافات المجتمع المدني",
+                hotspots: [
+                  { x: 50, y: 28, title: "اقتباسات قادة الفكر والسياسات الدولية", desc: "تصريحات رؤساء المنظمات الدولية (مثل د. عزة كرم) حول أهمية الشراكات المتعددة.", tech: "Dynamic Testimonial Carousel" },
+                  { x: 50, y: 57, title: "قسم المساهمين في مناظرات السياسات", desc: "شكر وتقدير للمؤسسات التي تثري الحوارات والملتقيات الدورية.", tech: "Partnership Acknowledgment Section" },
+                  { x: 26, y: 82, title: "الجمعية الأوروبية للديمقراطية المحلية (ALDA)", desc: "شراكة استراتيجية لتعزيز الحوكمة التشاركية والمجالس البلدية.", tech: "High-DPI Partner Vector Display" },
+                  { x: 42, y: 82, title: "مكتبة الإسكندرية (Bibliotheca Alexandrina)", desc: "المقر التأسيسي والتاريخي لاحتضان مؤسسة آنا ليند في مصر.", tech: "High-DPI Partner Vector Display" },
+                  { x: 58, y: 82, title: "المؤتمر الدائم للسمعي البصري المتوسطي (COPEAM)", desc: "الذراع الإعلامية والبث الإذاعي والتلفزيوني المشترك عبر المتوسط.", tech: "High-DPI Partner Vector Display" },
+                  { x: 42, y: 97, title: "المفوضية الأوروبية (European Commission)", desc: "الشريك المالي والسياسي المؤسس للمبادرات الأورومتوسطية.", tech: "Institutional Backer Authentication" }
+                ]
+              },
+              en: {
+                tab: "05. Global Partners",
+                title: "Strategic Institutional Partners & Policy Contributors",
+                caption: "Strategic alliances spanning the European Commission, Bibliotheca Alexandrina, and civic bodies",
+                hotspots: [
+                  { x: 50, y: 28, title: "High-Level Policy Thought Leadership Quotes", desc: "Statements by international thought leaders underscoring multistakeholder action.", tech: "Dynamic Testimonial Carousel" },
+                  { x: 50, y: 57, title: "Policy Debates Contributors Section", desc: "Formal acknowledgment of institutions elevating multilateral cultural governance.", tech: "Partnership Acknowledgment Section" },
+                  { x: 26, y: 82, title: "European Association for Local Democracy (ALDA)", desc: "Fosters participatory local governance and municipal civil society empowerment.", tech: "High-DPI Partner Vector Display" },
+                  { x: 42, y: 82, title: "Bibliotheca Alexandrina", desc: "Historic home and co-founder anchoring the foundation headquarters in Egypt.", tech: "High-DPI Partner Vector Display" },
+                  { x: 58, y: 82, title: "COPEAM Permanent Audiovisual Conference", desc: "Pan-Mediterranean media consortium linking public broadcasters and journalists.", tech: "High-DPI Partner Vector Display" },
+                  { x: 42, y: 97, title: "European Commission & EU External Action", desc: "Primary institutional governance and co-funding cornerstone supporting ALF.", tech: "Institutional Backer Authentication" }
+                ]
+              }
+            }
+          }
+        ]
+      },
+
+      // Chapter 2: Grants, Cultural Events & Euro-Med Policies
+      {
+        id: "alf-programmes-agenda",
+        icon: "🌍",
+        translations: {
+          ar: {
+            tabLabel: "02. الفعاليات والسياسات",
+            roleTitle: "برامج المنح والفعاليات والسياسات الإقليمية",
+            roleSubtitle: "التقويم التفاعلي الموحد، الأجندة الثقافية، وميثاق المتوسط",
+            lead: "منظومة إدارة وجدولة الفعاليات والملتقيات والمنح على امتداد حوض البحر الأبيض المتوسط؛ توفر تقويماً شهرياً وسنوياً مرمزاً بالألوان، وتفاصيل الحفلات والندوات ومبادرات حراك الشباب.",
+            specs: [
+              { label: "نظام التقويم", val: "Monthly & Yearly Multi-Source Matrix" },
+              { label: "تصنيف الفعاليات", val: "Secretariat, Networks, Grants, Calls" },
+              { label: "الرابط المباشر", val: '<a href="https://alf.website/en/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold); text-decoration:underline;">alf.website ↗</a>' },
+              { label: "التقنيات المستخدمة", val: "Dynamic Filtering • ICS Integration • UI/UX" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "مصفوفة التقويم التفاعلية المرمزة (Color-Coded Event Matrix)",
+                desc: "تقويم شهري وسنوي متكامل يفرز الفعاليات حسب: الأمانة العامة، الشبكات الوطنية، الدعوات المفتوحة، والجلسات الإعلامية."
+              },
+              {
+                num: "02",
+                title: "بطاقات الأكورديون التفاعلية للفعاليات (Event Accordion)",
+                desc: "عرض تفصيلي للفعاليات الثقافية والموسيقية (مثل تطوان وماتيرا) مع التوقيت والمنظم ورموز QR للتسجيل المباشر."
+              },
+              {
+                num: "03",
+                title: "مبادرة ميثاق المتوسط ورؤى الشباب (ALF4THEPACT)",
+                desc: "تبويب خاص بأوراق السياسات وأولويات الحراك الشبابي (Mobility, Youth, Culture) وتسهيل التبادل الثقافي ومواجهة التحديات."
+              },
+              {
+                num: "04",
+                title: "جواز السفر الثقافي والبعد الإنساني (Cultural Passport)",
+                desc: "إبراز قصص الباحثين والمشاركين الشباب والتأكيد على أن التكامل الإقليمي يبدأ من الروابط الإنسانية قبل المعاهدات الرسمية."
+              }
+            ],
+            tech: ["Interactive Calendar Engine", "Color-Coded Event Taxonomies", "Accordion Interactive UI", "Policy Paper Download Manager", "WCAG 2.1 Accessibility Compliance"]
+          },
+          en: {
+            tabLabel: "02. Events & Programmes",
+            roleTitle: "Grants, Cultural Events & Regional Programmes",
+            roleSubtitle: "Interactive Multilateral Calendar, Cultural Agenda & Euro-Med Pact",
+            lead: "The event coordination and cultural agenda subsystem spanning the Euro-Mediterranean basin; providing a comprehensive color-coded calendar, accordion event breakdowns, and youth mobility policy insights.",
+            specs: [
+              { label: "Calendar Engine", val: "Monthly & Yearly Multi-Source Matrix" },
+              { label: "Event Categorization", val: "Secretariat, Networks, Grants, Calls" },
+              { label: "Live Website", val: '<a href="https://alf.website/en/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold); text-decoration:underline;">alf.website ↗</a>' },
+              { label: "Core Technologies", val: "Dynamic Filtering • ICS Integration • UI/UX" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "Color-Coded Multilateral Calendar Matrix",
+                desc: "Monthly and yearly views classifying activities: Secretariat events, national network initiatives, open calls, and info-sessions."
+              },
+              {
+                num: "02",
+                title: "Expandable Cultural Event Accordion UI",
+                desc: "Rich cards detailing concerts and symposia (Tétouan, Matera) with venue metadata, ticketing, and instant QR registration."
+              },
+              {
+                num: "03",
+                title: "ALF4THEPACT Euro-Med Youth Policy Hub",
+                desc: "Strategic tabs addressing mobility, youth empowerment, and cultural diplomacy backed by downloadable policy position briefs."
+              },
+              {
+                num: "04",
+                title: "Human Dimension & Cultural Passport Initiatives",
+                desc: "Spotlights young researchers and exchange fellows, prioritizing people-to-people connections as the bedrock of regional peace."
+              }
+            ],
+            tech: ["Interactive Calendar Engine", "Color-Coded Event Taxonomies", "Accordion Interactive UI", "Policy Paper Download Manager", "WCAG 2.1 Accessibility Compliance"]
+          }
+        },
+        steps: [
+          {
+            image: "imgs/Anna lindh Foundation/4.png",
+            translations: {
+              ar: {
+                tab: "01. تقويم الفعاليات",
+                title: "التقويم الشهري والسنوي التفاعلي للفعاليات والمنح",
+                caption: "مصفوفة متقدمة لجدولة الفعاليات الأورومتوسطية مصنفة حسب الجهة المنظمة ونوع الدعوة",
+                hotspots: [
+                  { x: 20, y: 22, title: "محدد التاريخ وأزرار التنقل السريع", desc: "أزرار الشهر الحالي (Today) والتنقل بين الشهور وسنوات الأجندة.", tech: "Temporal Navigation Controls" },
+                  { x: 80, y: 22, title: "التبديل بين العرض الشهري والسنوي", desc: "إمكانية استعراض روزنامة الشهر تفصيلاً أو خريطة العام السنوية المدمجة.", tech: "Monthly / Yearly View Toggle" },
+                  { x: 35, y: 30, title: "مفتاح الألوان والتصنيفات الأربعة", desc: "ترميز لوني لأحداث الأمانة، أحداث الشبكات، الدعوات المفتوحة، والجلسات الإعلامية.", tech: "Color-Coded Legend Index" },
+                  { x: 59, y: 46, title: "مناظرة السياسات الدولية (ALF Policy Debate)", desc: "فعالية نوعية: تسخير العلوم والمجتمع لتعزيز التعاون الثقافي في أوروبا.", tech: "Calendar Event Node" },
+                  { x: 60, y: 70, title: "دعوة التدريب وبناء القدرات (Hands-On Call)", desc: "إعلان برنامج المنح والدورات التدريبية المفتوحة للشباب.", tech: "Grant Call Indicator" },
+                  { x: 80, y: 70, title: "أكاديمية شباب المتوسط (Med Youth Academy)", desc: "مؤتمر تدريبي يمتد لأيام في سلوفينيا لتمكين القيادات الشابة.", tech: "Multi-Day Event Span" }
+                ]
+              },
+              en: {
+                tab: "01. Events Calendar",
+                title: "Interactive Monthly & Yearly Multilateral Calendar",
+                caption: "Comprehensive scheduling grid categorizing activities across Europe and the Southern Mediterranean",
+                hotspots: [
+                  { x: 20, y: 22, title: "Date Range & Temporal Jump Controls", desc: "Fast jumping between current day, historical archive, and future months.", tech: "Temporal Navigation Controls" },
+                  { x: 80, y: 22, title: "Monthly / Yearly Perspective Toggle", desc: "Seamless switching between high-density monthly grid and macro annual roadmap.", tech: "Monthly / Yearly View Toggle" },
+                  { x: 35, y: 30, title: "Quad-Category Color Taxonomy Legend", desc: "Visual key isolating Secretariat events, Network sessions, Open Calls, and Info-days.", tech: "Color-Coded Legend Index" },
+                  { x: 59, y: 46, title: "Policy Debate Event Block", desc: "Highlights high-level symposium: Science for Society & Euro-Med Intercultural Cooperation.", tech: "Calendar Event Node" },
+                  { x: 60, y: 70, title: "Hands-On Call for Trainers Grant Badge", desc: "Flags active capacity building funding opportunities with direct application routing.", tech: "Grant Call Indicator" },
+                  { x: 80, y: 70, title: "Med Youth Academy Multi-Day Milestone", desc: "Depicts cross-border training bootcamps in Koper, Slovenia.", tech: "Multi-Day Event Span" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/2.png",
+            translations: {
+              ar: {
+                tab: "02. الأجندة الثقافية",
+                title: "أجندة الفعاليات الثقافية والموسيقية (Cultural Agenda)",
+                caption: "قوائم تفاعلية منسدلة تعرض تفاصيل الأمسيات والملتقيات والمواقع والجهات المنظمة",
+                hotspots: [
+                  { x: 24, y: 19, title: "رأس الفعالية والتوقيت والمدينة (تطوان)", desc: "تحديد اليوم والساعة (7:30 PM) والمدينة المستضيفة وعنوان الفعالية الموسيقية.", tech: "Event Accordion Header" },
+                  { x: 36, y: 48, title: "الملصق الترويجي ورمز الـ QR المباشر", desc: "معاينة البوستر الفني مع مسح فوري للـ QR لتأكيد الحضور أو مشاهدة البث.", tech: "Rich Poster & Dynamic QR" },
+                  { x: 65, y: 38, title: "تصنيف نوع الفعالية (Live Concert Music)", desc: "شارة نوع النشاط الثقافي ونبذة عن الفرقة والعازفين عبر البحر المتوسط.", tech: "Genre Badge & Contextual Copy" },
+                  { x: 65, y: 54, title: "الموقع الجغرافي والجهة المنظمة (IEMed)", desc: "تحديد معهد سيرفانتس بتطوان وتنظيم المعهد الأوروبي للبحر المتوسط.", tech: "Venue Geolocation & Host Entity" },
+                  { x: 56, y: 64, title: "زر معرفة المزيد والتسجيل (Know More)", desc: "رابط مباشر لصفحة تفاصيل المشاركة أو حجز التذاكر المجانية.", tech: "External Action Direct Link" },
+                  { x: 50, y: 84, title: "الفعاليات اللاحقة المجدولة (ماتيرا وتطوان)", desc: "أكورديون تفاعلي قابل للتوسيع يضم ملتقى شباب المتوسط وموسيقى سيفداه.", tech: "Collapsible Accordion Group" }
+                ]
+              },
+              en: {
+                tab: "02. Cultural Agenda",
+                title: "Expandable Cultural & Musical Event Showcase",
+                caption: "Interactive concert & seminar accordion featuring dates, venues, performers, and QR tickets",
+                hotspots: [
+                  { x: 24, y: 19, title: "Time, Venue & City Ribbon (Tétouan)", desc: "Prominently displays calendar date, local start time, and multi-cultural concert title.", tech: "Event Accordion Header" },
+                  { x: 36, y: 48, title: "Visual Poster Art & Direct QR Code", desc: "Embedded poster imagery paired with scannable QR credentials for mobile admission.", tech: "Rich Poster & Dynamic QR" },
+                  { x: 65, y: 38, title: "Cultural Tag (Live Concert Music)", desc: "Highlights artistic category, ensemble background, and cross-border music fusion.", tech: "Genre Badge & Contextual Copy" },
+                  { x: 65, y: 54, title: "Venue & Partner Organiser (IEMed)", desc: "Details Instituto Cervantes location and European Institute of the Mediterranean host.", tech: "Venue Geolocation & Host Entity" },
+                  { x: 56, y: 64, title: "Know More Interactive Button", desc: "Direct route opening dedicated event profile, schedule breakdown, and RSVP forms.", tech: "External Action Direct Link" },
+                  { x: 50, y: 84, title: "Upcoming Accordion Events (Matera & Tétouan)", desc: "Collapsed interactive cards teasing subsequent youth creative labs and concerts.", tech: "Collapsible Accordion Group" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/3.png",
+            translations: {
+              ar: {
+                tab: "03. رؤى الحوار والميثاق",
+                title: "مبادرة ميثاق المتوسط ورؤى الشباب (ALF4THEPACT)",
+                caption: "استخلاص مخرجات وتوصيات الحوارات المباشرة حول حرية التنقل والثقافة والشباب",
+                hotspots: [
+                  { x: 50, y: 15, title: "محاور الحوار الرئيسية (Mobility, Youth, Culture)", desc: "علامات تبويب تنقل سلسة تركز على حراك الأفراد، والشباب، والتعبير الثقافي.", tech: "Sub-thematic Tab Bar" },
+                  { x: 36, y: 44, title: "الرؤى المستخلصة من الحوارات المباشرة", desc: "نقاط استراتيجية تؤكد على حتمية التبادل الإنساني المباشر ومواجهة قيود التأشيرات.", tech: "Policy Insight Summary Box" },
+                  { x: 62, y: 45, title: "اقتباسات ممثلي الحراك الثقافي", desc: "عبارات مؤثرة: 'التنقل ليس هروباً، بل هو ربط وصياغة للروايات الإقليمية من الداخل'.", tech: "Callout Quotation Card" },
+                  { x: 30, y: 78, title: "زر تحميل ورقة السياسات الرسمية (Position Paper)", desc: "تحميل فوري لورقة موقف مؤسسة آنا ليند المرفوعة للمفوضية والجهات المعنية.", tech: "Policy Brief Document Download" },
+                  { x: 50, y: 92, title: "شهادات القيادات الشابة المؤثرة (MYA Influencer)", desc: "كلمة شكر وتقدير من ممثلي الشباب لتمكينهم في المحافل الدبلوماسية العليا.", tech: "Youth Ambassador Endorsement" }
+                ]
+              },
+              en: {
+                tab: "03. Dialogue Insights",
+                title: "Pact for the Mediterranean (ALF4THEPACT)",
+                caption: "Distilled recommendations on youth mobility, intercultural equity, and policy papers",
+                hotspots: [
+                  { x: 50, y: 15, title: "Core Focus Pills (Mobility, Youth, Culture)", desc: "Fast-switching pill filters focusing dialogue outputs across strategic priority axes.", tech: "Sub-thematic Tab Bar" },
+                  { x: 36, y: 44, title: "Insights from the Dialogues Digest", desc: "Key civil society takeaways addressing grassroots access and visa challenges.", tech: "Policy Insight Summary Box" },
+                  { x: 62, y: 45, title: "Direct Practitioner Testimonial Quotes", desc: "Articulates mobility as a creative instrument for shared regional identity.", tech: "Callout Quotation Card" },
+                  { x: 30, y: 78, title: "Download Position Paper Call-to-Action", desc: "Direct download trigger serving official ALF4THEPACT policy briefing documents.", tech: "Policy Brief Document Download" },
+                  { x: 50, y: 92, title: "Youth Ambassador Reflection (Rounak Nasri)", desc: "Grassroots youth representative testament validating mentorship impact.", tech: "Youth Ambassador Endorsement" }
+                ]
+              }
+            }
+          },
+          {
+            image: "imgs/Anna lindh Foundation/8.png",
+            translations: {
+              ar: {
+                tab: "04. البعد الإنساني والثقافي",
+                title: "البعد الإنساني وجواز السفر الثقافي لميثاق المتوسط",
+                caption: "التأكيد على أن الروابط الثقافية والإنسانية هي الركيزة الجوهرية لاستدامة التعاون",
+                hotspots: [
+                  { x: 50, y: 12, title: "جوهر ميثاق المتوسط الإنساني", desc: "قناعة راسخة بأن تعزيز الروابط الثقافية بين أوروبا وشركاء الجنوب يبدد الريبة.", tech: "Guiding Principles Narrative" },
+                  { x: 60, y: 26, title: "شهادة الباحث الشاب (Pablo Pastor Vidal)", desc: "تأكيد على تحويل 'حديث الشباب' إلى خطوات عملية ومشاريع ملموسة على الأرض.", tech: "Researcher Spotlight Quote" },
+                  { x: 63, y: 50, title: "مبادرة جواز السفر الثقافي (Passport Cultural)", desc: "رمزية الجواز الثقافي لتسهيل تنقل المبدعين والباحثين بين ضفتي المتوسط.", tech: "Cultural Passport Feature Image" },
+                  { x: 54, y: 72, title: "ملف الباحث والمبتكر الشاب", desc: "صورة وبطاقة الباحث تعبيراً عن المشاركة الفعالة لشباب المنطقة.", tech: "Ambassador Identity Portrait" },
+                  { x: 50, y: 94, title: "ركائز وضع الثقافة في قلب الميثاق", desc: "تبيان أن التعاون الحقيقي لا تكتفي به الحكومات بل يصنعه الناس عبر تبادل التجارب.", tech: "Core Strategic Pillar List" }
+                ]
+              },
+              en: {
+                tab: "04. Human Dimension",
+                title: "People-to-People Ties & The Cultural Passport",
+                caption: "Reinforcing cultural dialogue as the indispensable prerequisite for lasting integration",
+                hotspots: [
+                  { x: 50, y: 12, title: "Pact for the Mediterranean Core Principle", desc: "Reaffirms that strengthening ties across both shores of the sea dispels mistrust.", tech: "Guiding Principles Narrative" },
+                  { x: 60, y: 26, title: "Young Researcher Voice (Pablo Pastor Vidal)", desc: "Emphasizes bridging rhetoric into tangible grassroots leadership.", tech: "Researcher Spotlight Quote" },
+                  { x: 63, y: 50, title: "Cultural Passport Initiative (Passport Cultural)", desc: "Symbolic mobility pass accelerating artistic and scholastic cross-border exchange.", tech: "Cultural Passport Feature Image" },
+                  { x: 54, y: 72, title: "Next-Gen Researcher Feature Portrait", desc: "Visual storytelling anchoring civil society policy in actual youthful protagonists.", tech: "Ambassador Identity Portrait" },
+                  { x: 50, y: 94, title: "People at the Heart of the Pact Philosophy", desc: "Positions grassroots empathy ahead of bureaucratic treaties as the foundation of peace.", tech: "Core Strategic Pillar List" }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -2497,6 +2957,10 @@ function updateLanguageUI() {
   if (fWasalna) fWasalna.textContent = t.filterWasalna;
   const fBmo = document.getElementById("t-filter-bmo");
   if (fBmo) fBmo.textContent = t.filterBmo;
+  const fAlf = document.getElementById("t-filter-alf");
+  if (fAlf) fAlf.textContent = t.filterAlf;
+  const fMasters = document.getElementById("t-filter-masters");
+  if (fMasters) fMasters.textContent = t.filterMasters;
   document.getElementById("t-btn-collection").textContent = t.btnCollection;
   document.getElementById("t-btn-curator").textContent = t.btnCurator;
   document.getElementById("t-shelf-hint").textContent = t.shelfHint;
@@ -2934,6 +3398,37 @@ function renderBookshelf() {
         </div>
         ${tapHintHTML}
       `;
+    } else if (proj.id === 'anna-lindh-foundation') {
+      card.innerHTML = `
+        <div class="book-geometry">
+          <div class="book-cover-front">
+            <div class="modern-alf-cover">
+              <div class="alf-cover-top">
+                <span>${proj.code}</span>
+                <span>${proj.year}</span>
+              </div>
+              <div class="alf-cover-center">
+                <div class="alf-cover-logo-frame">
+                  <img src="imgs/Anna lindh Foundation/alf_logo.png" alt="Anna Lindh Foundation Logo">
+                </div>
+                <h3 class="alf-cover-title">${tData.title}</h3>
+                <p class="alf-cover-subtitle">${tData.subtitle}</p>
+              </div>
+              <div class="alf-cover-chapters">
+                ${proj.chapters.map((ch, cIdx) => `
+                  <div class="alf-cover-ch-row ${cIdx === 0 ? 'active' : ''}">
+                    <span>${ch.icon} ${ch.translations[state.currentLang].tabLabel}</span>
+                    <span>${ch.steps ? ch.steps.length + ' ' + (state.currentLang === 'ar' ? 'شاشات' : 'Screens') : (state.currentLang === 'ar' ? 'قريباً' : 'Soon')}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="book-spine-crease"></div>
+          </div>
+          <div class="book-page-edges"></div>
+        </div>
+        ${tapHintHTML}
+      `;
     } else {
       card.innerHTML = `
         <div class="book-geometry">
@@ -3094,6 +3589,12 @@ function loadChapter(chapterIndex, project) {
     leftLogoHTML = `
       <div class="bmo-cover-logo-frame" style="width:65px; height:65px; margin-bottom:0.75rem; border-radius:16px; background: rgba(92,219,211,0.12); display:grid; place-items:center; border: 1.5px solid rgba(92,219,211,0.4); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
         <img src="imgs/BMO/logo.png" alt="BMO Robot Logo" style="width:42px; height:45px; object-fit:contain;">
+      </div>
+    `;
+  } else if (project.id === 'anna-lindh-foundation') {
+    leftLogoHTML = `
+      <div class="alf-cover-logo-frame" style="width:110px; height:46px; margin-bottom:0.75rem; border-radius:10px; background:#ffffff; display:grid; place-items:center; padding:4px 8px; border: 1.5px solid rgba(56,189,248,0.4); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <img src="imgs/Anna lindh Foundation/alf_logo.png" alt="Anna Lindh Foundation Logo" style="width:100%; height:100%; object-fit:contain;">
       </div>
     `;
   } else {

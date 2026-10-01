@@ -271,6 +271,48 @@ body {
   box-shadow: 0 0 15px rgba(92, 219, 211, 0.35);
 }
 
+.cat-pill.alf-pill {
+  color: #04A2B1;
+  background: rgba(4, 162, 177, 0.12);
+  border: 1px solid rgba(4, 162, 177, 0.3);
+}
+
+.cat-pill.alf-pill .cat-pill-logo {
+  background: #ffffff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  height: 18px;
+  max-width: 48px;
+}
+
+.cat-pill.alf-pill:hover,
+.cat-pill.alf-pill.active {
+  background: rgba(5, 116, 145, 0.35);
+  color: #ffffff;
+  border-color: #04A2B1;
+  box-shadow: 0 0 16px rgba(4, 162, 177, 0.45);
+}
+
+.cat-pill.masters-pill {
+  color: #38bdf8;
+  background: rgba(15, 76, 129, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.cat-pill.masters-pill .cat-pill-logo {
+  height: 18px;
+  max-width: 52px;
+  object-fit: contain;
+}
+
+.cat-pill.masters-pill:hover,
+.cat-pill.masters-pill.active {
+  background: rgba(15, 76, 129, 0.35);
+  color: #fff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -773,6 +815,235 @@ html[dir="rtl"] .moon-cover-title {
 
 .bmo-cover-ch-row.active {
   color: #5cdbd3;
+  font-weight: 700;
+}
+
+/* ── Anna Lindh Foundation Book Cover ──────────────────── */
+.modern-alf-cover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, #031c24 0%, #057491 50%, #02141a 100%);
+  border: 2px solid rgba(4, 162, 177, 0.5);
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.modern-alf-cover::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(245, 138, 54, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.modern-alf-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, rgba(4, 162, 177, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.alf-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #04A2B1;
+  position: relative;
+  z-index: 1;
+}
+
+.alf-cover-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1.25rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.alf-cover-logo-frame {
+  width: 116px;
+  height: 46px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid #04A2B1;
+  display: grid;
+  place-items: center;
+  padding: 4px 8px;
+  margin-bottom: 1.15rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(4, 162, 177, 0.35);
+}
+
+.alf-cover-logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.alf-cover-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 0 15px rgba(4, 162, 177, 0.4);
+}
+
+.alf-cover-subtitle {
+  font-size: 0.78rem;
+  color: #d1f4f8;
+  line-height: 1.45;
+}
+
+.alf-cover-chapters {
+  border-top: 1px solid rgba(4, 162, 177, 0.35);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.alf-cover-ch-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: rgba(209, 244, 248, 0.6);
+}
+
+.alf-cover-ch-row.active {
+  color: #F58A36;
+  font-weight: 700;
+}
+
+/* ── Masters Global Book Cover ─────────────────────────── */
+.modern-masters-cover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, #061524 0%, #0c2742 50%, #081a2e 100%);
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.modern-masters-cover::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.modern-masters-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.masters-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #38bdf8;
+  position: relative;
+  z-index: 1;
+}
+
+.masters-cover-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1.25rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.masters-cover-logo-frame {
+  width: 130px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 6px 10px;
+  margin-bottom: 1.15rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.masters-cover-logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.masters-cover-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.masters-cover-subtitle {
+  font-size: 0.78rem;
+  color: #bae6fd;
+  line-height: 1.45;
+}
+
+.masters-cover-chapters {
+  border-top: 1px solid rgba(56, 189, 248, 0.25);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.masters-cover-ch-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.masters-cover-ch-row.active {
+  color: #38bdf8;
   font-weight: 700;
 }
 
@@ -3192,7 +3463,9 @@ html, body {
 
   .modern-moon-cover,
   .modern-wasalna-cover,
-  .modern-bmo-cover {
+  .modern-bmo-cover,
+  .modern-alf-cover,
+  .modern-masters-cover {
     padding: 1.35rem 1.1rem;
   }
 
@@ -3204,6 +3477,13 @@ html, body {
     margin-bottom: 0.75rem;
   }
 
+  .alf-cover-logo-frame,
+  .masters-cover-logo-frame {
+    width: 90px;
+    height: 38px;
+    margin-bottom: 0.75rem;
+  }
+
   .bmo-cover-logo-frame img {
     width: 36px;
     height: 38px;
@@ -3211,25 +3491,34 @@ html, body {
 
   .moon-cover-title,
   .wasalna-cover-title,
-  .bmo-cover-title {
+  .bmo-cover-title,
+  .alf-cover-title,
+  .masters-cover-title {
     font-size: 1.45rem;
   }
 
   .moon-cover-subtitle,
   .wasalna-cover-subtitle,
-  .bmo-cover-subtitle {
+  .bmo-cover-subtitle,
+  .alf-cover-subtitle,
+  .masters-cover-subtitle {
     font-size: 0.75rem;
   }
 
   .moon-cover-chapters,
   .wasalna-cover-chapters,
-  .bmo-cover-chapters {
+  .bmo-cover-chapters,
+  .alf-cover-chapters,
+  .masters-cover-chapters {
     gap: 0.35rem;
     margin-top: 0.5rem;
   }
 
   .moon-cover-ch-row,
-  .wasalna-cover-ch-row {
+  .wasalna-cover-ch-row,
+  .bmo-cover-ch-row,
+  .alf-cover-ch-row,
+  .masters-cover-ch-row {
     font-size: 0.68rem;
   }
 
