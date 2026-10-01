@@ -2838,6 +2838,9 @@ const elements = {
   btnLangEn: document.getElementById("btn-lang-en"),
   audioToggle: document.getElementById("audio-toggle"),
   categoryFilter: document.getElementById("category-filter"),
+  catTabsWrapper: document.getElementById("category-tabs-wrapper"),
+  catSliderPrev: document.getElementById("cat-slider-prev"),
+  catSliderNext: document.getElementById("cat-slider-next"),
   bookshelfView: document.getElementById("bookshelf-view"),
   flipbookView: document.getElementById("flipbook-view"),
   carouselTrack: document.getElementById("carousel-track"),
@@ -2992,6 +2995,10 @@ function updateLanguageUI() {
   if (gitSpan) gitSpan.textContent = t.contactGit;
   const linkedinSpan = document.querySelector("#t-contact-linkedin span");
   if (linkedinSpan) linkedinSpan.textContent = isAr ? "حساب LinkedIn" : "LinkedIn Profile";
+
+  if (typeof window.updateCategorySlider === "function") {
+    window.updateCategorySlider();
+  }
 
   elements.hotspotsBtnLabel.textContent = state.areHotspotsVisible ? t.hideHotspots : t.showHotspots;
 
@@ -4057,6 +4064,74 @@ function setupEventListeners() {
     elements.lightboxDialog.close();
   });
 
+  // Category slider controller with silky smooth hardware-accelerated transform
+  let catSlideIndex = 0;
+  const maxSlideIndex = 3; // 6 items - 3 visible = 3
+
+  window.updateCategorySlider = () => {
+    if (!elements.categoryFilter || !elements.catTabsWrapper) return;
+    const isRTL = document.documentElement.dir === "rtl" || state.currentLang === "ar";
+    const pill = elements.categoryFilter.querySelector(".cat-pill");
+    const gap = 7.2;
+    const step = pill ? (pill.offsetWidth + gap) : 173.2;
+    const offset = catSlideIndex * step;
+    const translateX = isRTL ? offset : -offset;
+    elements.categoryFilter.style.transform = `translateX(${translateX}px)`;
+
+    if (elements.catSliderPrev) {
+      elements.catSliderPrev.classList.toggle("disabled", catSlideIndex <= 0);
+    }
+    if (elements.catSliderNext) {
+      elements.catSliderNext.classList.toggle("disabled", catSlideIndex >= maxSlideIndex);
+    }
+  };
+
+  if (elements.catSliderPrev && elements.catSliderNext && elements.catTabsWrapper) {
+    elements.catSliderPrev.addEventListener("click", () => {
+      playSound("click");
+      if (catSlideIndex > 0) {
+        catSlideIndex--;
+        window.updateCategorySlider();
+      }
+    });
+
+    elements.catSliderNext.addEventListener("click", () => {
+      playSound("click");
+      if (catSlideIndex < maxSlideIndex) {
+        catSlideIndex++;
+        window.updateCategorySlider();
+      }
+    });
+
+    // Touch swipe support on wrapper for mobile devices
+    let touchStartX = 0;
+    elements.catTabsWrapper.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    elements.catTabsWrapper.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchEndX - touchStartX;
+      const isRTL = document.documentElement.dir === "rtl" || state.currentLang === "ar";
+      if (Math.abs(diffX) > 35) {
+        if ((diffX < 0 && !isRTL) || (diffX > 0 && isRTL)) {
+          if (catSlideIndex < maxSlideIndex) {
+            catSlideIndex++;
+            window.updateCategorySlider();
+          }
+        } else {
+          if (catSlideIndex > 0) {
+            catSlideIndex--;
+            window.updateCategorySlider();
+          }
+        }
+      }
+    }, { passive: true });
+
+    window.addEventListener("resize", window.updateCategorySlider, { passive: true });
+    window.updateCategorySlider();
+  }
+
   // Category filter
   elements.categoryFilter.addEventListener("click", (e) => {
     const pill = e.target.closest(".cat-pill");
@@ -4064,6 +4139,20 @@ function setupEventListeners() {
     playSound("click");
     elements.categoryFilter.querySelectorAll(".cat-pill").forEach(p => p.classList.remove("active"));
     pill.classList.add("active");
+
+    // Auto align slider to ensure clicked pill is visible in current window
+    const allPills = Array.from(elements.categoryFilter.querySelectorAll(".cat-pill"));
+    const clickedIdx = allPills.indexOf(pill);
+    if (clickedIdx !== -1) {
+      if (clickedIdx < catSlideIndex) {
+        catSlideIndex = clickedIdx;
+        window.updateCategorySlider();
+      } else if (clickedIdx > catSlideIndex + 2) {
+        catSlideIndex = Math.min(maxSlideIndex, clickedIdx - 2);
+        window.updateCategorySlider();
+      }
+    }
+
     state.currentCategory = pill.dataset.filter;
     state.activeProjectIndex = 0;
     if (state.isFlipBookOpen) {
