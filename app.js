@@ -7,11 +7,11 @@ const I18N = {
   ar: {
     roleBadge: "معرض أعمالي التقنية",
     filterAll: "جميع المنصات",
-    filterWasalna: "⚡ منصة وصلنا (WASALNA)",
-    filterFullstack: "أنظمة Full-Stack",
+    filterMoon: "أكاديمية مون",
+    filterWasalna: "منصة وصلنا",
     btnCollection: "أرشيف الأعمال",
     btnCurator: "عن المهندس",
-    shelfHint: "اضغط على كتاب منصة وصلنا لفتح الكتيّب التفاعلي واستعراض فصول وأدوار النظام",
+    shelfHint: "اضغط على أي كتاب لفتح الكتيّب التفاعلي واستعراض فصول وأدوار النظام",
     backBtn: "العودة للرف الرئيسي",
     prevPage: "السابق",
     nextPage: "التالي",
@@ -31,16 +31,17 @@ const I18N = {
     contactMail: "تواصل عبر البريد",
     contactGit: "مستودع GitHub",
     featureBadge: "ميزة تشغيلية",
-    architectureLabel: "المعمارية والتقنية:"
+    architectureLabel: "المعمارية والتقنية:",
+    tapZoom: "تكبير الشاشة"
   },
   en: {
     roleBadge: "Technical Portfolio",
     filterAll: "All Platforms",
-    filterWasalna: "⚡ Wasalna Platform",
-    filterFullstack: "Full-Stack Systems",
+    filterMoon: "Moon Academy",
+    filterWasalna: "Wasalna Platform",
     btnCollection: "The Collection",
     btnCurator: "Curator / About",
-    shelfHint: "Click the Wasalna manual to open the interactive flip-book and explore system roles",
+    shelfHint: "Click on any manual to open the interactive flip-book and explore system architecture",
     backBtn: "Return to Shelf",
     prevPage: "Prev Page",
     nextPage: "Next Page",
@@ -60,7 +61,8 @@ const I18N = {
     contactMail: "Get in Touch via Email",
     contactGit: "GitHub Profile",
     featureBadge: "FEATURE SPOTLIGHT",
-    architectureLabel: "Architecture:"
+    architectureLabel: "Architecture:",
+    tapZoom: "Tap to enlarge"
   }
 };
 
@@ -70,8 +72,8 @@ const PROJECTS = [
   {
     id: "moon-academy",
     isMasterBook: true,
-    category: "fullstack",
-    code: "FIELD MANUAL • VOL. 00",
+    category: "moon-academy",
+    code: "FIELD MANUAL • VOL. 01",
     year: "2026",
     rating: "✦ ✦ ✦ ✦ ✦",
     logo: "imgs/Moon Academy/moon-logo.svg",
@@ -660,7 +662,7 @@ const PROJECTS = [
     id: "wasalna",
     isMasterBook: true,
     category: "wasalna",
-    code: "FIELD MANUAL • VOL. 01",
+    code: "FIELD MANUAL • VOL. 02",
     year: "2026",
     rating: "✦ ✦ ✦ ✦ ✦",
     logo: "imgs/wesalna/logo/Group 4.svg",
@@ -1870,97 +1872,6 @@ const PROJECTS = [
         ]
       }
     ]
-  },
-  // 2. CAPITAL FLOW (FINTECH PLATFORM)
-  {
-    id: "capital-flow",
-    isMasterBook: false,
-    category: "fullstack",
-    code: "FIELD MANUAL • VOL. 02",
-    year: "2026",
-    rating: "✦ ✦ ✦ ✦ ✦",
-    coverImg: "assets/images/cover_capital_flow.jpg",
-    translations: {
-      ar: {
-        title: "كابيتال فلو (Capital Flow)",
-        subtitle: "قمرة قيادة التحليلات المالية عالية التدفق",
-        lead: "منظومة تحليلات مالية ومحفظة مؤسسية مصممة للتعامل مع آلاف الحركات النقدية اللحظية عبر قنوات WebSocket مشفرة وواجهة داكنة مريحة للعين.",
-        coverMeta: "دليل النظم المالية • 2026"
-      },
-      en: {
-        title: "Capital Flow",
-        subtitle: "High-Throughput Fintech Analytics Cockpit",
-        lead: "A mission-critical financial analytics ecosystem engineered for institutional capital intelligence with sub-second WebSocket telemetry and dark glassmorphic ergonomics.",
-        coverMeta: "Fintech Systems • 2026"
-      }
-    },
-    chapters: [
-      {
-        id: "fintech-core",
-        icon: "📈",
-        translations: {
-          ar: {
-            tabLabel: "01. المؤشرات والسيولة",
-            roleTitle: "قمرة قيادة المؤشرات المالية والسيولة",
-            roleSubtitle: "بث فوري لأرباح المؤسسة، وحجم المعاملات، وإدارة البطاقات الذكية",
-            lead: "واجهة متطورة تعتمد على الرسوم المتجهة السريعة لمتابعة حركة السيولة دون أي تأخير في الـ DOM.",
-            specs: [
-              { label: "نوع النظام", val: "Fintech Web App" },
-              { label: "محرك البيانات", val: "High-Frequency TimescaleDB" },
-              { label: "المعمارية", val: "Next.js • Go • TimescaleDB" },
-              { label: "الدور", val: "Lead Architect & UI" }
-            ],
-            highlights: [
-              { num: "01", title: "معالجة بيانات فورية دون 50ms", desc: "تدفق بيانات ثنائي الاتجاه عبر WebSocket وProtobuf يخفض استهلاك الشبكة بنسبة 64%." },
-              { num: "02", title: "نظام تصميم داكن زجاجي متكيف (WCAG AAA)", desc: "أكثر من 40 رمزا تصميميا تضمن أعلى درجات وضوح الرؤية والتباين للرسوم المعقدة." }
-            ],
-            tech: ["TypeScript", "Next.js", "Tailwind CSS", "Go", "TimescaleDB", "Redis Streams", "WebSockets"]
-          },
-          en: {
-            tabLabel: "01. Analytics",
-            roleTitle: "Executive Analytics Cockpit",
-            roleSubtitle: "Real-time liquidity, transaction volumes and card issuance",
-            lead: "A high-frequency dashboard leveraging HTML5 Canvas-accelerated charting for instantaneous data refresh.",
-            specs: [
-              { label: "System Type", val: "Fintech Web App" },
-              { label: "Data Engine", val: "High-Frequency TimescaleDB" },
-              { label: "Architecture", val: "Next.js • Go • TimescaleDB" },
-              { label: "Role", val: "Lead Architect & UI" }
-            ],
-            highlights: [
-              { num: "01", title: "Sub-50ms Global Realtime Pipelines", desc: "Bi-directional WebSocket pipelines cutting bandwidth payloads by 64%." },
-              { num: "02", title: "Adaptive Dark Glassmorphism Design System", desc: "40+ atomic tokens ensuring WCAG AAA accessibility across complex charts." }
-            ],
-            tech: ["TypeScript", "Next.js", "Tailwind CSS", "Go", "TimescaleDB", "Redis Streams", "WebSockets"]
-          }
-        },
-        steps: [
-          {
-            image: "assets/images/project1_fintech.jpg",
-            translations: {
-              ar: {
-                tab: "01. لوحة المؤشرات",
-                title: "لوحة المؤشرات التنفيذية للسيولة والأرباح",
-                plate: "PLATE 01 — FINANCIAL TELEMETRY",
-                hotspots: [
-                  { x: 21, y: 28, title: "مؤشر صافي الربح الفوري", desc: "بيانات تتدفق بتحديثات تصل إلى 100Hz عبر رسوم بيانية مسرعة بـ WebGL.", tech: "HTML5 Canvas • WebGL Shaders" },
-                  { x: 68, y: 45, title: "مصفوفة أحجام المعاملات", desc: "تتبع بوابات الدفع والتسويات البنكية آلياً مع كشف الأنماط الشاذة.", tech: "TimescaleDB • Redis Streams" }
-                ]
-              },
-              en: {
-                tab: "01. Dashboard",
-                title: "Executive Liquidity & Profit Telemetry",
-                plate: "PLATE 01 — FINANCIAL TELEMETRY",
-                hotspots: [
-                  { x: 21, y: 28, title: "Real-Time Net Profit Streamer", desc: "Sub-second financial aggregates rendered using Canvas-accelerated vector charting.", tech: "HTML5 Canvas • WebGL Shaders" },
-                  { x: 68, y: 45, title: "Bi-directional Volume Matrix", desc: "High-density histogram tracking inbound gateways with anomaly alerts.", tech: "TimescaleDB • Redis Streams" }
-                ]
-              }
-            }
-          }
-        ]
-      }
-    ]
   }
 ];
 
@@ -2090,9 +2001,12 @@ function updateLanguageUI() {
   elements.htmlRoot.dir = isAr ? "rtl" : "ltr";
 
   document.getElementById("t-role-badge").textContent = t.roleBadge;
-  document.getElementById("t-filter-all").textContent = t.filterAll;
-  document.getElementById("t-filter-wasalna").textContent = t.filterWasalna;
-  document.getElementById("t-filter-fullstack").textContent = t.filterFullstack;
+  const fAll = document.getElementById("t-filter-all");
+  if (fAll) fAll.textContent = t.filterAll;
+  const fMoon = document.getElementById("t-filter-moon");
+  if (fMoon) fMoon.textContent = t.filterMoon;
+  const fWasalna = document.getElementById("t-filter-wasalna");
+  if (fWasalna) fWasalna.textContent = t.filterWasalna;
   document.getElementById("t-btn-collection").textContent = t.btnCollection;
   document.getElementById("t-btn-curator").textContent = t.btnCurator;
   document.getElementById("t-shelf-hint").textContent = t.shelfHint;
@@ -2103,6 +2017,8 @@ function updateLanguageUI() {
   document.getElementById("t-highlights-title").textContent = t.highlightsTitle;
   document.getElementById("t-stack-title").textContent = t.stackTitle;
   document.getElementById("t-btn-expand").textContent = t.btnExpand;
+  const tapZoomEl = document.getElementById("t-tap-zoom");
+  if (tapZoomEl) tapZoomEl.textContent = t.tapZoom;
   document.getElementById("t-footer-ready").textContent = t.footerReady;
 
   document.getElementById("t-modal-archive-tag").textContent = t.modalArchiveTag;
@@ -2390,7 +2306,7 @@ function updateLanguageUI() {
 // FILTER PROJECTS
 function getFilteredProjects() {
   if (state.currentCategory === "all") return PROJECTS;
-  return PROJECTS.filter(p => p.category === state.currentCategory);
+  return PROJECTS.filter(p => p.category === state.currentCategory || p.id === state.currentCategory);
 }
 
 // RENDER 3D BOOKSHELF CAROUSEL
@@ -2542,14 +2458,24 @@ function updateCarouselPositions() {
   cards.forEach((card, idx) => {
     card.classList.remove("active", "prev", "next", "hidden-card");
 
-    if (idx === state.activeProjectIndex) {
+    if (list.length === 1) {
       card.classList.add("active");
-    } else if (idx === (state.activeProjectIndex - 1 + list.length) % list.length) {
-      card.classList.add("prev");
-    } else if (idx === (state.activeProjectIndex + 1) % list.length) {
-      card.classList.add("next");
+    } else if (list.length === 2) {
+      if (idx === state.activeProjectIndex) {
+        card.classList.add("active");
+      } else {
+        card.classList.add(state.activeProjectIndex === 0 ? "next" : "prev");
+      }
     } else {
-      card.classList.add("hidden-card");
+      if (idx === state.activeProjectIndex) {
+        card.classList.add("active");
+      } else if (idx === (state.activeProjectIndex - 1 + list.length) % list.length) {
+        card.classList.add("prev");
+      } else if (idx === (state.activeProjectIndex + 1) % list.length) {
+        card.classList.add("next");
+      } else {
+        card.classList.add("hidden-card");
+      }
     }
   });
 
@@ -3054,6 +2980,83 @@ function setupEventListeners() {
   });
 
   setupParallaxTilt();
+  setupTouchGestures();
+}
+
+// TOUCH SWIPE NAVIGATION & TAP TO EXPAND FOR MOBILE
+function setupTouchGestures() {
+  // 1. Bookshelf carousel swipe
+  let shelfStartX = 0;
+  let shelfStartY = 0;
+  let shelfStartTime = 0;
+
+  if (elements.bookshelfView) {
+    elements.bookshelfView.addEventListener("touchstart", (e) => {
+      if (state.isFlipBookOpen) return;
+      const touch = e.changedTouches[0];
+      shelfStartX = touch.clientX;
+      shelfStartY = touch.clientY;
+      shelfStartTime = Date.now();
+    }, { passive: true });
+
+    elements.bookshelfView.addEventListener("touchend", (e) => {
+      if (state.isFlipBookOpen) return;
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - shelfStartX;
+      const deltaY = touch.clientY - shelfStartY;
+      const duration = Date.now() - shelfStartTime;
+
+      if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3 && duration < 600) {
+        const isAr = state.currentLang === "ar";
+        if (deltaX < 0) {
+          if (isAr) elements.prevBookBtn.click();
+          else elements.nextBookBtn.click();
+        } else {
+          if (isAr) elements.nextBookBtn.click();
+          else elements.prevBookBtn.click();
+        }
+      }
+    }, { passive: true });
+  }
+
+  // 2. Flipbook page swipe
+  let bookStartX = 0;
+  let bookStartY = 0;
+  let bookStartTime = 0;
+
+  if (elements.activeBookRig) {
+    elements.activeBookRig.addEventListener("touchstart", (e) => {
+      if (!state.isFlipBookOpen) return;
+      const touch = e.changedTouches[0];
+      bookStartX = touch.clientX;
+      bookStartY = touch.clientY;
+      bookStartTime = Date.now();
+    }, { passive: true });
+
+    elements.activeBookRig.addEventListener("touchend", (e) => {
+      if (!state.isFlipBookOpen) return;
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - bookStartX;
+      const deltaY = touch.clientY - bookStartY;
+      const duration = Date.now() - bookStartTime;
+
+      if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3 && duration < 600) {
+        if (deltaX < 0) {
+          elements.nextPageBtn.click();
+        } else {
+          elements.prevPageBtn.click();
+        }
+      }
+    }, { passive: true });
+  }
+
+  // 3. Tap on screenshot to open fullscreen preview
+  if (elements.screenshotWrapper) {
+    elements.screenshotWrapper.addEventListener("click", (e) => {
+      if (e.target.closest(".hotspot-pin") || e.target.closest("#hotspot-callout")) return;
+      elements.btnFullscreenPreview.click();
+    });
+  }
 }
 
 // INITIALIZATION ENTRY POINT

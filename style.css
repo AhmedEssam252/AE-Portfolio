@@ -173,23 +173,49 @@ body {
 
 .category-tabs {
   display: flex;
+  align-items: center;
   gap: 0.4rem;
   background: rgba(30, 27, 24, 0.75);
   padding: 0.3rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
 }
 
 .cat-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background: transparent;
   border: none;
   color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 0.45rem 1.1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.cat-pill-logo {
+  height: 18px;
+  width: auto;
+  max-width: 24px;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+  transition: transform 0.25s ease;
+}
+
+.moon-pill .cat-pill-logo {
+  border-radius: 50%;
+}
+
+.cat-pill:hover .cat-pill-logo {
+  transform: scale(1.12);
 }
 
 .cat-pill:hover {
@@ -203,18 +229,32 @@ body {
   border: 1px solid rgba(207, 168, 114, 0.4);
 }
 
+.cat-pill.moon-pill {
+  color: #00dcb4;
+  background: rgba(0, 220, 180, 0.08);
+  border: 1px solid rgba(0, 220, 180, 0.25);
+}
+
+.cat-pill.moon-pill:hover,
+.cat-pill.moon-pill.active {
+  background: rgba(0, 220, 180, 0.22);
+  color: #fff;
+  border-color: #00dcb4;
+  box-shadow: 0 0 15px rgba(0, 220, 180, 0.35);
+}
+
 .cat-pill.wasalna-pill {
   color: var(--brand-emerald);
-  background: rgba(52, 209, 143, 0.1);
-  border: 1px solid rgba(52, 209, 143, 0.3);
+  background: rgba(52, 209, 143, 0.08);
+  border: 1px solid rgba(52, 209, 143, 0.25);
 }
 
 .cat-pill.wasalna-pill:hover,
 .cat-pill.wasalna-pill.active {
-  background: rgba(52, 209, 143, 0.25);
+  background: rgba(52, 209, 143, 0.22);
   color: #fff;
   border-color: var(--brand-emerald);
-  box-shadow: 0 0 15px rgba(52, 209, 143, 0.4);
+  box-shadow: 0 0 15px rgba(52, 209, 143, 0.35);
 }
 
 .header-right {
@@ -1091,6 +1131,41 @@ html[dir="rtl"] .ribbon-brand-group {
 .screenshot-frame.contain-fit .active-screenshot {
   object-fit: contain;
   object-position: center;
+}
+
+/* Floating Zoom Hint Badge */
+.screenshot-zoom-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(14, 13, 11, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  pointer-events: none;
+  z-index: 15;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 0.88;
+}
+
+html[dir="rtl"] .screenshot-zoom-badge {
+  left: auto;
+  right: 10px;
+}
+
+.screenshot-canvas-wrapper:hover .screenshot-zoom-badge {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* Hotspots Layer */
@@ -2113,38 +2188,145 @@ html, body {
 
 /* 3. MOBILE PHONES & COMPACT SCREENS (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Header in 2 rows: Top bar (Brand + Tools) & Bottom bar (Platform Tabs) */
   .site-header {
-    height: 64px;
-    padding: 0 1rem;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    padding: 0.5rem 0.85rem 0.6rem;
+    row-gap: 0.45rem;
+    background: rgba(18, 17, 15, 0.96);
+    border-bottom: 1px solid rgba(207, 168, 114, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .header-left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .brand-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+
+  .header-right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.45rem;
+  }
+
+  .header-center {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 0.1rem 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .header-center::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tabs {
+    gap: 0.35rem;
+    padding: 0.2rem 0.3rem;
+    flex-shrink: 0;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .cat-pill {
+    padding: 0.38rem 0.8rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    gap: 0.35rem;
+    min-height: 32px;
+  }
+
+  .cat-pill-logo {
+    height: 15px;
+    max-width: 19px;
   }
 
   .btn-editorial {
-    padding: 0.4rem 0.85rem;
-    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
   }
 
   .btn-editorial.outline {
     display: none;
   }
 
-  .category-tabs {
-    gap: 0.35rem;
-    padding: 0.2rem;
+  .showcase-stage {
+    padding-top: 106px;
   }
 
-  .cat-pill {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.7rem;
-    white-space: nowrap;
+  /* 3D Bookshelf View */
+  .bookshelf-view {
+    padding: 1rem 0.75rem 2.5rem;
+    min-height: calc(100vh - 110px);
+    justify-content: center;
   }
 
-  /* Carousel */
   .carousel-track-3d {
-    height: 480px;
+    height: 420px;
+    max-width: 100vw;
+  }
+
+  .book-card-3d {
+    width: min(290px, 82vw);
+    height: 400px;
+  }
+
+  .book-card-3d.active {
+    transform: translateX(0) translateZ(40px) rotateY(0deg);
+  }
+
+  .book-card-3d.prev {
+    transform: translateX(-230px) translateZ(-40px) scale(0.85) rotateY(16deg);
+    opacity: 0.55;
+  }
+
+  .book-card-3d.next {
+    transform: translateX(230px) translateZ(-40px) scale(0.85) rotateY(-16deg);
+    opacity: 0.55;
+  }
+
+  html[dir="rtl"] .book-card-3d.prev {
+    transform: translateX(230px) translateZ(-40px) scale(0.85) rotateY(-16deg);
+  }
+
+  html[dir="rtl"] .book-card-3d.next {
+    transform: translateX(-230px) translateZ(-40px) scale(0.85) rotateY(16deg);
+  }
+
+  .carousel-hud {
+    margin-top: 1.15rem;
+    gap: 1.25rem;
+  }
+
+  .hud-nav {
+    width: 44px;
+    height: 44px;
+  }
+
+  .carousel-hint {
+    margin-top: 0.85rem;
+    font-size: 0.74rem;
+    padding: 0 1rem;
+    line-height: 1.45;
   }
 
   .book-spine-hinge,
@@ -2154,22 +2336,42 @@ html, body {
 
   /* Opened Book Folio */
   .flipbook-view {
-    padding: 1rem 0.85rem 3rem;
-    gap: 1.75rem;
+    padding: 0.85rem 0.65rem 3rem;
+    gap: 1.5rem;
+  }
+
+  .flipbook-main-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .book-stage-container {
+    width: 100%;
   }
 
   .book-stage-top-controls {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .back-to-shelf-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.76rem;
+    min-height: 38px;
   }
 
   .inside-book-roles-tabs {
     width: 100%;
+    display: flex;
+    gap: 0.4rem;
     overflow-x: auto;
-    padding-bottom: 4px;
-    justify-content: flex-start;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.15rem 0.1rem 0.35rem;
   }
   .inside-book-roles-tabs::-webkit-scrollbar {
     display: none;
@@ -2177,26 +2379,35 @@ html, body {
 
   .inside-role-tab,
   .role-tab-btn {
-    padding: 0.35rem 0.8rem;
-    font-size: 0.72rem;
     flex-shrink: 0;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.74rem;
+    min-height: 36px;
   }
 
   .book-3d-rig {
-    height: 430px;
+    height: auto;
+    min-height: 0;
     perspective: none;
+    transform: none;
   }
 
   .book-hardcover-opened {
     transform: none !important;
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    background: var(--bg-paper);
+    padding: 2px;
   }
 
-  .book-page-right,
   .book-page-single {
-    padding: 0.85rem 0.85rem 1rem;
+    height: auto;
+    padding: 0.75rem 0.75rem 0.85rem;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .book-edge-stack {
@@ -2204,7 +2415,7 @@ html, body {
   }
 
   .page-header-ribbon {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
     padding-bottom: 0.35rem;
   }
 
@@ -2213,55 +2424,186 @@ html, body {
     gap: 0.35rem;
   }
 
+  .ribbon-plate {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-  .hotspot-pin {
-    width: 22px;
-    height: 22px;
+  .page-number-disp {
     font-size: 0.68rem;
   }
 
+  /* Screenshot Canvas Wrapper */
+  .screenshot-canvas-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10.5;
+    min-height: 200px;
+    max-height: 52vh;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background: #080d16;
+  }
+
+  .screenshot-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #080d16;
+  }
+
+  .active-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* Zoom hint on mobile */
+  .screenshot-zoom-badge {
+    top: 7px;
+    left: 7px;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    opacity: 0.95;
+  }
+  html[dir="rtl"] .screenshot-zoom-badge {
+    left: auto;
+    right: 7px;
+  }
+
+  /* Hotspot Pins with 44px tap zone */
+  .hotspot-pin {
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+  }
+  .hotspot-pin::before {
+    content: '';
+    position: absolute;
+    inset: -9px;
+    border-radius: 50%;
+  }
+
+  /* Hotspot Callout Floating Sheet */
   .hotspot-callout {
+    position: absolute;
     bottom: 8px;
-    width: calc(100% - 16px);
-    padding: 0.75rem 1rem;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-height: 65%;
+    overflow-y: auto;
+    padding: 0.85rem 1rem;
+    background: rgba(18, 16, 14, 0.95);
+    backdrop-filter: blur(16px);
+    border-radius: 8px;
+    z-index: 35;
+    border: 1px solid rgba(207, 168, 114, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
   }
 
   .callout-title {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
+    line-height: 1.35;
   }
 
   .callout-desc {
-    font-size: 0.75rem;
+    font-size: 0.74rem;
+    line-height: 1.5;
   }
 
-  .page-spread-buttons {
-    gap: 0.4rem;
-  }
-
-  .spread-indicator {
-    gap: 0.35rem;
-  }
-
-  .spread-tab {
-    padding: 0.28rem 0.65rem;
+  .callout-tech {
     font-size: 0.68rem;
   }
 
-  .page-nav-btn {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.7rem;
+  /* Footer Navigation */
+  .page-footer-nav {
+    margin-top: 0.25rem;
   }
 
+  .page-spread-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .page-nav-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.74rem;
+    min-height: 36px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+
+  .spread-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .spread-tab {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.68rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+
+  .book-tips {
+    margin-top: 0.65rem;
+    font-size: 0.72rem;
+    padding: 0 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* Editorial Panel */
   .editorial-panel {
-    padding: 1.35rem 1.25rem;
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .panel-meta-header {
+    margin-bottom: 0.35rem;
   }
 
   .panel-title {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
 
+  .panel-subtitle {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .panel-lead {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .panel-actions {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .action-btn {
+    height: 42px;
+    font-size: 0.76rem;
+  }
+
+  /* Dossier Specs & Highlights */
   .flipbook-dossier-row {
-    padding: 1.35rem 1.15rem;
+    padding: 1.25rem 1rem;
+    gap: 1.35rem;
     border-radius: var(--radius-md);
   }
 
@@ -2271,65 +2613,158 @@ html, body {
   }
 
   .feature-list.horizontal-grid .feature-item {
-    padding: 1rem 1.15rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .tech-pills-list.horizontal-tags {
+    gap: 0.4rem;
   }
 
   .tech-pills-list.horizontal-tags .tech-tag {
     font-size: 0.7rem;
-    padding: 0.3rem 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* Dialogs */
+  .editorial-dialog {
+    padding: 0.5rem;
   }
 
   .dialog-card {
-    padding: 1.35rem 1.15rem;
-    max-width: 94vw;
+    padding: 1.25rem 1rem;
+    max-width: 96vw;
+    max-height: 92vh;
   }
 
-  .about-grid {
+  .dialog-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .dialog-title {
+    font-size: 1.35rem;
+  }
+
+  .collection-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0.85rem;
+  }
+
+  .collection-item-card {
+    padding: 1rem;
+  }
+
+  /* Lightbox */
+  .lightbox-dialog {
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+
+  .lightbox-wrapper {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    justify-content: center;
+    border: none;
+  }
+
+  .lightbox-image {
+    max-width: 96vw;
+    max-height: 80vh;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+  }
+
+  .lightbox-caption {
+    font-size: 0.78rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
   }
 }
 
 /* 4. SMALL MOBILE PHONES (max-width: 440px) */
 @media (max-width: 440px) {
-  .site-header {
-    height: 58px;
-    padding: 0 0.65rem;
-  }
-
   .brand-title {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
-  .header-center {
+  .cat-pill {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.68rem;
+  }
+
+  .cat-pill-logo {
+    height: 14px;
+    max-width: 16px;
+  }
+
+  .carousel-track-3d {
+    height: 375px;
+  }
+
+  .book-card-3d {
+    width: min(265px, 84vw);
+    height: 360px;
+  }
+
+  .modern-moon-cover,
+  .modern-wasalna-cover {
+    padding: 1.35rem 1.1rem;
+  }
+
+  .moon-cover-logo-frame,
+  .wasalna-cover-logo-frame {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 0.75rem;
+  }
+
+  .moon-cover-title,
+  .wasalna-cover-title {
+    font-size: 1.45rem;
+  }
+
+  .moon-cover-subtitle,
+  .wasalna-cover-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .moon-cover-chapters,
+  .wasalna-cover-chapters {
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+
+  .moon-cover-ch-row,
+  .wasalna-cover-ch-row {
+    font-size: 0.68rem;
+  }
+
+  .book-tap-hint {
+    bottom: -36px;
+    padding: 4px 12px;
+    font-size: 0.68rem;
+  }
+
+  .ribbon-plate {
     display: none;
   }
 
-  .lang-switch-box {
-    padding: 0.2rem 0.4rem;
-  }
-
-  .lang-btn {
-    font-size: 0.7rem;
-  }
-
-  .book-3d-rig {
-    height: 370px;
-  }
-
-
-  .page-spread-buttons {
-    gap: 0.25rem;
-  }
-
   .spread-tab {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.65rem;
+    padding: 0.28rem 0.5rem;
+    font-size: 0.64rem;
   }
 
   .page-nav-btn {
-    padding: 0.25rem 0.55rem;
-    font-size: 0.66rem;
+    padding: 0.38rem 0.65rem;
+    font-size: 0.68rem;
   }
 
   .panel-actions {
@@ -2339,7 +2774,7 @@ html, body {
 
   .action-btn {
     width: 100%;
-    height: 38px;
+    height: 40px;
   }
 }
 
