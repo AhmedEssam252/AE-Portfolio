@@ -2528,6 +2528,11 @@ function openFlipBook(project) {
   const pData = project.translations[state.currentLang];
   elements.watermarkTitle.textContent = pData.title;
 
+  const bookOpened = document.getElementById("book-opened-element");
+  if (bookOpened && window.innerWidth <= 768) {
+    bookOpened.style.transform = "none";
+  }
+
   // Render Inside-Book Chapter Tabs (Roles)
   renderBookRolesTabs(project);
 
@@ -2589,12 +2594,35 @@ function loadChapter(chapterIndex, project) {
     `;
   }
 
+  // Update ribbon chapter label
+  const pageChapterTag = document.getElementById("page-chapter-tag");
+  if (pageChapterTag) {
+    pageChapterTag.textContent = chData.tabLabel;
+  }
+
   // Render Editorial Panel Info
   elements.panelManualId.textContent = project.code;
   elements.panelYear.textContent = project.year;
   elements.panelTitle.textContent = chData.roleTitle;
   elements.panelSubtitle.textContent = chData.roleSubtitle;
   elements.panelDescription.textContent = chData.lead;
+
+  // Render Platform Specs Summary Strip in Editorial Panel (crucial for mobile overview)
+  const panelSpecsStrip = document.getElementById("panel-specs-strip");
+  if (panelSpecsStrip) {
+    panelSpecsStrip.innerHTML = "";
+    if (chData.specs && chData.specs.length > 0) {
+      chData.specs.forEach(s => {
+        const item = document.createElement("div");
+        item.className = "spec-strip-item";
+        item.innerHTML = `
+          <span class="spec-strip-label">${s.label}</span>
+          <strong class="spec-strip-val">${s.val}</strong>
+        `;
+        panelSpecsStrip.appendChild(item);
+      });
+    }
+  }
 
   // Render Highlights
   elements.panelFeaturesList.innerHTML = "";
@@ -2800,7 +2828,7 @@ function renderCollectionGrid() {
 // 3D PARALLAX TILT
 function setupParallaxTilt() {
   document.addEventListener("mousemove", (e) => {
-    if (!state.isFlipBookOpen) return;
+    if (!state.isFlipBookOpen || window.innerWidth <= 768) return;
     const { clientX, clientY } = e;
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
