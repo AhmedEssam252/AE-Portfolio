@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE Portfolio — Engineering &amp; UI/UX Works</title>
+  <meta name="description" content="An interactive 3D editorial field manual and website showcase portfolio. Explore full-stack architecture, UI/UX case studies, and interactive screenshot flip-books.">
+  
+  <!-- Google Fonts: Cormorant Garamond, Cinzel, Cairo, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="editorial-theme">
+  <!-- Subtle Vintage Grain Background Overlay -->
+  <div class="vintage-grain" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="#" class="brand-title" id="brand-home">AE Portfolio</a>
+      <span class="role-badge" id="t-role-badge">معرض أعمالي التقنية</span>
+    </div>
+
+    <div class="header-center">
+      <nav class="category-tabs" id="category-filter" aria-label="Project categories">
+        <button class="cat-pill active" data-filter="all" id="t-filter-all">جميع المنصات</button>
+        <button class="cat-pill wasalna-pill" data-filter="wasalna" id="t-filter-wasalna">⚡ منصة وصلنا (WASALNA)</button>
+        <button class="cat-pill" data-filter="fullstack" id="t-filter-fullstack">أنظمة Full-Stack</button>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <!-- Language Switcher -->
+      <div class="lang-switch-box">
+        <button class="lang-btn active" id="btn-lang-ar" data-lang="ar">عربي</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btn-lang-en" data-lang="en">EN</button>
+      </div>
+
+
+
+      <button class="btn-editorial" id="open-collection-btn">
+        <span class="btn-dot"></span>
+        <span id="t-btn-collection">The Collection</span>
+      </button>
+
+      <button class="btn-editorial outline" id="open-about-btn">
+        <span id="t-btn-curator">Curator / About</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Big Watermark Title in Background -->
+  <div class="watermark-container" aria-hidden="true">
+    <span class="watermark-text" id="watermark-title">WASALNA</span>
+  </div>
+
+  <!-- Main Viewport -->
+  <main class="showcase-stage" id="showcase-stage">
+    
+    <!-- MODE 1: 3D BOOK SHELF / CAROUSEL -->
+    <section class="bookshelf-view" id="bookshelf-view">
+      <div class="carousel-track-3d" id="carousel-track">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Carousel Navigation Controls -->
+      <div class="carousel-hud">
+        <button class="hud-nav prev" id="prev-book" aria-label="Previous Book">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="carousel-indicators" id="carousel-dots">
+          <!-- Dots injected dynamically -->
+        </div>
+
+        <button class="hud-nav next" id="next-book" aria-label="Next Book">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="carousel-hint">
+        <span id="t-shelf-hint">اضغط على كتاب منصة وصلنا لفتح الكتيّب التفاعلي واستعراض فصول وأدوار النظام</span>
+      </div>
+    </section>
+
+    <!-- MODE 2: ACTIVE FLIP-BOOK & EDITORIAL REVIEW -->
+    <section class="flipbook-view hidden" id="flipbook-view">
+      
+      <!-- TOP ROW: 3D Book Viewer & Executive Summary Side-by-Side -->
+      <div class="flipbook-main-row">
+        
+        <!-- Left: 3D Book Stage -->
+        <div class="book-stage-container">
+          <div class="book-stage-top-controls">
+            <button class="back-to-shelf-btn" id="close-flipbook-btn" aria-label="Back to bookshelf">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span id="t-back-btn">العودة للرف الرئيسي</span>
+            </button>
+
+            <!-- Inside-Book Chapter / Roles Selector Tabs -->
+            <div class="inside-book-roles-tabs" id="book-roles-tabs">
+              <!-- Dynamically populated: Role 1: Customer, Role 2: Cashier... -->
+            </div>
+          </div>
+
+          <!-- Interactive 3D Book Rig -->
+          <div class="book-3d-rig" id="active-book-rig">
+            <div class="book-hardcover-opened single-page-folio" id="book-opened-element">
+              <div id="left-page-content" style="display: none;" aria-hidden="true"></div>
+
+              <div class="book-page book-page-single" id="page-right">
+                <div class="page-paper-texture"></div>
+                
+                <div class="page-header-ribbon">
+                  <div class="ribbon-brand-group">
+                    <span class="ribbon-chapter" id="page-chapter-tag">01. Customer Journey</span>
+                    <span class="ribbon-sep">•</span>
+                    <span class="ribbon-plate" id="page-plate-tag">PLATE 01 — STORE DISCOVERY</span>
+                  </div>
+                  <span class="page-number-disp" id="page-num-disp">Pg. 1 / 7</span>
+                </div>
+
+                <div class="screenshot-canvas-wrapper" id="screenshot-wrapper">
+                  <div class="screenshot-frame" id="screenshot-frame">
+                    <img src="" alt="Project Screenshot" id="active-page-screenshot" class="active-screenshot">
+                    <div class="hotspots-layer" id="hotspots-layer"></div>
+                  </div>
+
+                  <div class="hotspot-callout hidden" id="hotspot-callout">
+                    <div class="callout-header">
+                      <span class="callout-badge" id="callout-badge">FEATURE SPOTLIGHT</span>
+                      <button class="callout-close" id="callout-close-btn">&times;</button>
+                    </div>
+                    <h4 class="callout-title" id="callout-title">Feature Title</h4>
+                    <p class="callout-desc" id="callout-desc">Feature description here.</p>
+                    <div class="callout-tech" id="callout-tech">Tech used</div>
+                  </div>
+                </div>
+
+                <div class="page-footer-nav">
+                  <div class="page-spread-buttons">
+                    <button class="page-nav-btn prev" id="prev-page-btn" title="Previous Page">
+                      <svg class="nav-arrow prev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                      <span id="t-prev-page">السابق</span>
+                    </button>
+                    
+                    <div class="spread-indicator" id="spread-tabs"></div>
+
+                    <button class="page-nav-btn next" id="next-page-btn" title="Next Page">
+                      <span id="t-next-page">التالي</span>
+                      <svg class="nav-arrow next" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="book-edge-stack"></div>
+            </div>
+          </div>
+
+          <div class="book-tips">
+            <span id="t-hotspot-hint">&bull; اضغط على أرقام الميزات المضيئة على لقطة الشاشة لمعاينة القرارات البرمجية</span>
+          </div>
+        </div>
+
+        <!-- Right: Executive Summary Card (Adjacent to the book) -->
+        <aside class="editorial-panel" id="editorial-panel">
+          <div class="panel-inner">
+            <div class="panel-meta-header">
+              <span class="manual-code" id="panel-manual-id">FIELD MANUAL &bull; NO. 01</span>
+              <span class="panel-year" id="panel-year">2026</span>
+            </div>
+
+            <h1 class="panel-title" id="panel-title">Wasalna Platform</h1>
+            <p class="panel-subtitle" id="panel-subtitle">The Subtitle</p>
+
+            <p class="panel-lead" id="panel-description">
+              Project review and architectural breakdown text.
+            </p>
+
+            <!-- Quick Action Buttons -->
+            <div class="panel-actions">
+              <button class="action-btn primary" id="btn-toggle-hotspots">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span id="hotspots-btn-label">إخفاء النقاط</span>
+              </button>
+              
+              <button class="action-btn secondary" id="btn-fullscreen-preview">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+                <span id="t-btn-expand">ملء الشاشة</span>
+              </button>
+            </div>
+
+            <div class="panel-footer-notes">
+              <div class="rating-stars" aria-label="Field Notes rating">
+                &#10022; &#10022; &#10022; &#10022; &#10022;
+              </div>
+              <span class="edition-label" id="t-footer-ready">Production Ready System &bull; 2026</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- LOWER SECTION: Horizontal Architectural Dossier (Underneath the book, full width) -->
+      <div class="flipbook-dossier-row">
+        
+        <!-- Feature Highlights Section (3-Column Horizontal Grid) -->
+        <div class="dossier-section">
+          <div class="dossier-header">
+            <h2 class="dossier-title" id="t-highlights-title">أبرز الركائز الهندسية والبرمجية</h2>
+            <div class="dossier-line"></div>
+          </div>
+          <div class="feature-list horizontal-grid" id="panel-features-list">
+            <!-- Feature 01, 02, 03 dynamically injected -->
+          </div>
+        </div>
+
+        <!-- Tech Stack Breakdown -->
+        <div class="dossier-section tech-dossier-section">
+          <div class="dossier-header">
+            <h2 class="dossier-title" id="t-stack-title">حزمة التقنيات المستخدمة</h2>
+            <div class="dossier-line"></div>
+          </div>
+          <div class="tech-pills-list horizontal-tags" id="panel-tech-list">
+            <!-- Tech tags injected -->
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL 1: THE FULL COLLECTION ARCHIVE (Drawer/Modal) -->
+  <dialog class="editorial-dialog" id="collection-dialog">
+    <div class="dialog-card">
+      <div class="dialog-header">
+        <div>
+          <span class="dialog-tag" id="t-modal-archive-tag">CATALOG ARCHIVE</span>
+          <h2 class="dialog-title" id="t-modal-archive-title">The Complete Works Collection</h2>
+        </div>
+        <button class="dialog-close-btn" id="close-collection-btn" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="dialog-body">
+        <p class="dialog-intro" id="t-modal-archive-desc">
+          اختر أي منصة لفتح الكتيّب ثلاثي الأبعاد ومطالعة تفاصيل المعمارية وشاشات التشغيل.
+        </p>
+
+        <div class="collection-grid" id="collection-grid">
+          <!-- Populated via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- MODAL 2: CURATOR / ABOUT & CONTACT -->
+  <dialog class="editorial-dialog" id="about-dialog">
+    <div class="dialog-card">
+      <div class="dialog-header">
+        <div>
+          <span class="dialog-tag" id="t-about-tag">FULL-STACK ENGINEER &amp; ARCHITECT</span>
+          <h2 class="dialog-title" id="t-about-title">أحمد عصام — هندسة النظم وتطوير المنصات الرقمية</h2>
+        </div>
+        <button class="dialog-close-btn" id="close-about-btn" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="dialog-body about-body">
+        <div class="about-grid">
+          <div class="about-bio" id="about-bio-container">
+            <!-- Dynamic Bio injected in app.js -->
+          </div>
+
+          <div class="about-sidebar">
+            <div class="curator-card-box">
+              <div class="curator-avatar-frame">
+                <img src="imgs/ahmed_essam_portrait.jpg" alt="Ahmed Essam | أحمد عصام" class="curator-photo-img" onerror="this.onerror=null; this.src='imgs/WhatsApp Image 2026-10-01 at 5.18.10 PM.jpeg';">
+              </div>
+              <h4 id="t-curator-name">أحمد عصام | Ahmed Essam</h4>
+              <p class="curator-location" id="t-curator-role">Full-Stack Web Developer &amp; Solutions Specialist</p>
+              
+              <div class="contact-links">
+                <a href="https://www.linkedin.com/in/ahmed-essam-07333a202" target="_blank" rel="noopener noreferrer" class="contact-pill-btn linkedin" id="t-contact-linkedin">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  <span>LinkedIn Profile</span>
+                </a>
+                
+                <a href="https://github.com/AhmedEssam252" target="_blank" rel="noopener noreferrer" class="contact-pill-btn github" id="t-contact-git">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span>GitHub Profile</span>
+                </a>
+
+                <a href="mailto:microahmed252@outlook.com" class="contact-pill-btn outline" id="t-contact-mail" title="microahmed252@outlook.com">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span id="t-contact-mail-text">تواصل عبر البريد</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- MODAL 3: FULLSCREEN SCREENSHOT LIGHTBOX -->
+  <dialog class="editorial-dialog lightbox-dialog" id="lightbox-dialog">
+    <div class="lightbox-wrapper">
+      <button class="lightbox-close" id="close-lightbox-btn">&times;</button>
+      <img src="" alt="Full preview" id="lightbox-img" class="lightbox-image">
+      <div class="lightbox-caption" id="lightbox-caption">Screenshot Title</div>
+    </div>
+  </dialog>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
