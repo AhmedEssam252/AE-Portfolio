@@ -291,6 +291,33 @@ const PROJECTS = [
                 ]
               }
             }
+          },
+          {
+            image: "imgs/Moon Academy/website overview/image.png",
+            translations: {
+              ar: {
+                tab: "07. أولياء الأمور",
+                title: "بوابة أولياء الأمور والمعلمين",
+                plate: "PLATE 07 — PARENTS & TEACHERS PORTAL",
+                hotspots: [
+                  { x: 33, y: 15, title: "حماية وخصوصية الأطفال", desc: "التزام تام بمعايير خصوصية الأطفال وحماية البيانات مع رصد آمن لتقدم الطالب دون أي إعلانات.", tech: "Child Safety • Privacy by Design" },
+                  { x: 65, y: 30, title: "بطاقة الطالب والمسار التعليمي", desc: "عرض تفصيلي لملف الطالب، الفئة العمرية المخصصة (4-7 سنوات)، ونقاط الخبرة XP المحققة.", tech: "Student Profile • Gamification Metrics" },
+                  { x: 50, y: 56, title: "رصد التقدم حسب عوالم العلوم", desc: "مؤشرات أداء بيانية توضح نسب إنجاز المهام في مسارات الويب، الذكاء الاصطناعي، والأمن السيبراني.", tech: "Progress Analytics • Real-time Tracking" },
+                  { x: 50, y: 92, title: "سجل الأوسمة والتحصيل", desc: "توثيق الإنجازات والأوسمة التحفيزية المكتسبة لمشاركة نجاح الطالب مع المعلم والأسرة.", tech: "Achievement & Badges Engine" }
+                ]
+              },
+              en: {
+                tab: "07. Parents Portal",
+                title: "Parents & Teachers Governance Portal",
+                plate: "PLATE 07 — PARENTS & TEACHERS PORTAL",
+                hotspots: [
+                  { x: 33, y: 15, title: "Child Privacy & Safety Standards", desc: "Full compliance with child privacy protection frameworks, zero advertising, and encrypted learning telemetry.", tech: "Child Safety • Privacy by Design" },
+                  { x: 65, y: 30, title: "Student Profile & Track Metrics", desc: "Detailed overview of the student's profile, active age track (Little Explorer 4-7 yrs), and accumulated XP.", tech: "Student Profile • Gamification Metrics" },
+                  { x: 50, y: 56, title: "Multi-Track Progress Analytics", desc: "Visual progress bars tracking task completion across Web Dev, AI, Cybersecurity, and Game Development tracks.", tech: "Progress Analytics • Real-time Tracking" },
+                  { x: 50, y: 92, title: "Achievement & Badges Record", desc: "Verified log of earned digital trophies and milestones celebrating student breakthroughs with teachers and family.", tech: "Achievement & Badges Engine" }
+                ]
+              }
+            }
           }
         ]
       },
