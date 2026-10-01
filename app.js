@@ -9,6 +9,7 @@ const I18N = {
     filterAll: "جميع المنصات",
     filterMoon: "أكاديمية مون",
     filterWasalna: "منصة وصلنا",
+    filterBmo: "روبوت BMO الذكي",
     btnCollection: "أرشيف الأعمال",
     btnCurator: "عن المهندس",
     shelfHint: "اضغط على أي كتاب لفتح الكتيّب التفاعلي واستعراض فصول وأدوار النظام",
@@ -32,13 +33,18 @@ const I18N = {
     contactGit: "مستودع GitHub",
     featureBadge: "ميزة تشغيلية",
     architectureLabel: "المعمارية والتقنية:",
-    tapZoom: "تكبير الشاشة"
+    tapZoom: "تكبير الشاشة",
+    rotateHint: "تدوير الهاتف يمنحك عرضاً تفصيلياً كاملاً",
+    lightboxTouchHint: "انقر مرتين للتكبير / اسحب للتنقل",
+    zoom2x: "تكبير 2x",
+    reset1x: "إعادة ضبط 1x"
   },
   en: {
     roleBadge: "Technical Portfolio",
     filterAll: "All Platforms",
     filterMoon: "Moon Academy",
     filterWasalna: "Wasalna Platform",
+    filterBmo: "BMO AI Robot",
     btnCollection: "The Collection",
     btnCurator: "Curator / About",
     shelfHint: "Click on any manual to open the interactive flip-book and explore system architecture",
@@ -62,7 +68,11 @@ const I18N = {
     contactGit: "GitHub Profile",
     featureBadge: "FEATURE SPOTLIGHT",
     architectureLabel: "Architecture:",
-    tapZoom: "Tap to enlarge"
+    tapZoom: "Tap to enlarge",
+    rotateHint: "Rotate phone for panoramic desktop view",
+    lightboxTouchHint: "Double-tap to zoom • Drag to pan",
+    zoom2x: "Zoom 2x",
+    reset1x: "Reset 1x"
   }
 };
 
@@ -1899,6 +1909,452 @@ const PROJECTS = [
         ]
       }
     ]
+  },
+
+  // 2. BMO ROBOT COMPANION (Interactive Child Companion & Smart Parenting Intelligence)
+  {
+    id: "bmo",
+    isMasterBook: true,
+    category: "bmo",
+    code: "FIELD MANUAL • VOL. 03",
+    year: "2026",
+    rating: "✦ ✦ ✦ ✦ ✦",
+    logo: "imgs/BMO/logo.png",
+    translations: {
+      ar: {
+        title: "روبوت BMO — رفيق الأطفال الذكي",
+        subtitle: "مساعد ذكي تفاعلي للأطفال ومستشار تربوي لأولياء الأمور",
+        lead: "منظومة ذكاء اصطناعي متكاملة صُممت لتكون رفيقاً تفاعلياً للأطفال عبر محادثات صوتية طبيعية، وتحليل المشاعر بالرؤية الحاسوبية، والألعاب التعليمية وسرد القصص، مع تزويد أولياء الأمور بلوحة تحكم ذكية ترصد النمو المعرفي والنفسي وتمنحهم نصائح تربوية مخصصة بناءً على أسئلة واهتمامات أطفالهم.",
+        coverMeta: "الذكاء الاصطناعي التفاعلي للطفل • 2026"
+      },
+      en: {
+        title: "BMO Robot Companion",
+        subtitle: "Multimodal AI Kids Pal & Smart Parenting Intelligence",
+        lead: "A multimodal AI companion robot engineered to engage children through natural voice interaction, real-time emotion vision, gamified quests, and ethical values storytelling, while providing parents with an actionable psychological dashboard and personalized guidance tailored to their children's inquiries.",
+        coverMeta: "Interactive Child AI Platform • 2026"
+      }
+    },
+    chapters: [
+      // Chapter 1: Interactive Child Companion & AI Engine
+      {
+        id: "bmo-companion",
+        icon: "🤖",
+        translations: {
+          ar: {
+            tabLabel: "01. رفيق الطفل التفاعلي",
+            roleTitle: "الرفيق التفاعلي والذكاء الاصطناعي",
+            roleSubtitle: "المحادثة الصوتية الطبيعية، التعابير الحية، والرؤية الحاسوبية",
+            lead: "واجهة محاكاة لروبوت كرتوني مبهج يتحدث مع الأطفال صوتياً بنبرات طفولية مرحة، يتفاعل مع مشاعرهم بلحظية، ويقدم مغامرات وقصصاً هادفة تعزز القيم الأخلاقية.",
+            specs: [
+              { label: "نوع المنصة", val: "Multimodal AI Robot App" },
+              { label: "الفئة المستهدفة", val: "أطفال 4–12 سنة" },
+              { label: "المعمارية", val: "Python • LLM / Audio • WebRTC" },
+              { label: "الدور", val: "AI Engineer & Full-Stack Architect" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "تفاعل صوتي محادثي فوري (Real-time Speech)",
+                desc: "نظام محادثة طبيعي يدعم الاستماع المستمر، استخلاص المعنى، وتوليد نبرات صوت طفولية مرحة ومناسبة لسن الطفل."
+              },
+              {
+                num: "02",
+                title: "محاكاة تعابير الوجه العاطفية",
+                desc: "شاشة ريترو تفاعلية تتحول فيها عيون وملامح الروبوت لتعكس السعادة، الدهشة، أو التعاطف عند مواساة الطفل الحزين."
+              },
+              {
+                num: "03",
+                title: "رؤية حاسوبية آمنة في الرام (Zero Storage)",
+                desc: "معالجة الفيديو مباشرة في الذاكرة لرصد مشاعر الطفل (ابتسام، حزن، تعجب) دون تخزين أي صورة أو انتهاك خصوصية الأسرة."
+              },
+              {
+                num: "04",
+                title: "تخصيص النبرات الصوتية عبر محرك OmniVoice",
+                desc: "خيارات نبرات متعددة: الصوت الأصلي المرح، الحماسي للمسابقات، الهادئ لقصص النوم، والهمس للأسرار."
+              }
+            ],
+            tech: [
+              "Python 3.14",
+              "OmniVoice TTS",
+              "WebRTC Stream",
+              "Computer Vision",
+              "LLM Orchestration",
+              "WebSocket Audio",
+              "Vector Memory",
+              "Zero-Retention RAM"
+            ]
+          },
+          en: {
+            tabLabel: "01. AI Kids Pal",
+            roleTitle: "Interactive AI Companion Engine",
+            roleSubtitle: "Natural Voice Conversation, Living Expressions & Computer Vision",
+            lead: "A lively interactive robot interface simulating a friendly animated companion that converses natively in playful child voices, empathizes with real-time emotions, and guides moral storytelling quests.",
+            specs: [
+              { label: "Platform Type", val: "Multimodal AI Robot App" },
+              { label: "Target Audience", val: "Kids 4–12 Years" },
+              { label: "Architecture", val: "Python • LLM / Audio • WebRTC" },
+              { label: "Role", val: "AI Engineer & Full-Stack Architect" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "Real-time Natural Voice Interaction",
+                desc: "Continuous listening and streaming dialogue architecture synthesizing lifelike, age-appropriate children voices."
+              },
+              {
+                num: "02",
+                title: "Adaptive Facial Affect Simulation",
+                desc: "Retro screen expressions dynamically morphing to reflect joy, curiosity, or gentle comforting for upset children."
+              },
+              {
+                num: "03",
+                title: "Privacy-Guaranteed In-RAM Computer Vision",
+                desc: "Episodic facial emotion tracking processed purely in ephemeral RAM without saving images or recording video."
+              },
+              {
+                num: "04",
+                title: "Multi-Persona OmniVoice TTS Synthesis",
+                desc: "Dynamic voice engine offering joyful playmate, calm bedtime storyteller, energetic quiz host, and whisper modes."
+              }
+            ],
+            tech: [
+              "Python 3.14",
+              "OmniVoice TTS",
+              "WebRTC Stream",
+              "Computer Vision",
+              "LLM Orchestration",
+              "WebSocket Audio",
+              "Vector Memory",
+              "Zero-Retention RAM"
+            ]
+          }
+        },
+        steps: [
+          // Step 1: Main Robot Interaction
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 194205.png",
+            translations: {
+              ar: {
+                tab: "01. الواجهة التفاعلية",
+                title: "الواجهة التفاعلية للروبوت والمحادثة الحية",
+                caption: "شاشة ريترو تفاعلية تحاكي جهاز ألعاب ذكي يتحدث بصوت مرح ويتفاعل مع الطفل لحظياً",
+                hotspots: [
+                  { x: 50, y: 44, title: "شاشة التعابير الحية", desc: "ملامح وعيون تفاعلية تتغير لحظياً للتعبير عن المشاعر والحماس عند بدء الحوار.", tech: "Canvas / SVG Reactive Animation" },
+                  { x: 48, y: 18, title: "فقاعة الحوار الترحيبي", desc: "استدعاء المواضيع السابقة وتذكّر اهتمامات الطفل لبناء رابطة ألفة وأمان.", tech: "Contextual Episodic Memory Recall" },
+                  { x: 37, y: 92, title: "زر التحدث الصوتي الفوري", desc: "التقاط فوري للصوت عبر الميكروفون مع إلغاء الصدى وتحويل الكلام لنص.", tech: "WebRTC Audio & Real-time ASR" },
+                  { x: 55, y: 92, title: "وضع الحوار المستمر", desc: "تفعيل تبادل أطراف الحديث المتواصل دون الحاجة لإعادة الضغط على الأزرار.", tech: "Continuous Duplex Dialogue Engine" },
+                  { x: 25, y: 5, title: "الوصول السريع للوحة الوالدين", desc: "بوابة مشفرة تتيح للأب والأم الإشراف والمتابعة الذكية بأمان.", tech: "Parental PIN Gate & Auth" }
+                ]
+              },
+              en: {
+                tab: "01. Robot Interface",
+                title: "Interactive Robot UI & Real-Time Voice Chat",
+                caption: "Playful retro console interface simulating an empathetic talking robot friend",
+                hotspots: [
+                  { x: 50, y: 44, title: "Living Expressions Display", desc: "Reactive facial graphics adapting instantly to conversation emotion and child enthusiasm.", tech: "Canvas / SVG Reactive Animation" },
+                  { x: 48, y: 18, title: "Personalized Greeting Bubble", desc: "Recalls past conversational topics and games to foster warmth and familiarity.", tech: "Contextual Episodic Memory Recall" },
+                  { x: 37, y: 92, title: "Instant Voice Interaction", desc: "Low-latency microphone streaming with noise cancellation and speech-to-text.", tech: "WebRTC Audio & Real-time ASR" },
+                  { x: 55, y: 92, title: "Continuous Dialogue Mode", desc: "Full-duplex conversation flow enabling back-and-forth chat without repeated tapping.", tech: "Continuous Duplex Dialogue Engine" },
+                  { x: 25, y: 5, title: "Parent Dashboard Access", desc: "Secure portal allowing guardians to review developmental milestones.", tech: "Parental PIN Gate & Auth" }
+                ]
+              }
+            }
+          },
+          // Step 2: Empathy and Comforting
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 201616.png",
+            translations: {
+              ar: {
+                tab: "02. الذكاء العاطفي",
+                title: "الذكاء العاطفي ومواساة مشاعر الطفل الحزين",
+                caption: "تغير ملامح الروبوت لتعابير التعاطف وتوجيه تمرين تنفس مهدئ مع كلام دافئ",
+                hotspots: [
+                  { x: 50, y: 44, title: "تعبير التعاطف والمواساة", desc: "استشعار نبرة الحزن أو ملامح العبوس وتحويل وجه الروبوت لتعابير الرعاية.", tech: "Emotion Classifier & Adaptive Mood" },
+                  { x: 48, y: 16, title: "تمرين التنفس والدعم النفسي", desc: "توجيه الطفل لأخذ نفس عميق والشعور بالأمان وأن الروبوت بجواره دائماً.", tech: "Calming Pedagogical Prompt Architecture" },
+                  { x: 55, y: 90, title: "خيارات استكشاف الحوار", desc: "اقتراح حكاية قصة مبهجة أو بدء لغز مسلٍ لتشتيت المشاعر السلبية بلطف.", tech: "Emotional Uplift Decision Tree" }
+                ]
+              },
+              en: {
+                tab: "02. Empathy Engine",
+                title: "Empathetic Emotion Sensing & Calming Support",
+                caption: "Robot facial expression shifting to warmth, offering deep-breathing exercises and encouragement",
+                hotspots: [
+                  { x: 50, y: 44, title: "Empathetic Facial Modulation", desc: "Detects upset sentiment and reflects caring, supportive facial cues.", tech: "Emotion Classifier & Adaptive Mood" },
+                  { x: 48, y: 16, title: "Mindfulness & Calming Prompting", desc: "Guides the child through mindful breathing and comforting words to regulate distress.", tech: "Calming Pedagogical Prompt Architecture" },
+                  { x: 55, y: 90, title: "Mood Lifting Suggestions", desc: "Proactively offers uplifting tales or friendly riddles to restore emotional balance.", tech: "Emotional Uplift Decision Tree" }
+                ]
+              }
+            }
+          },
+          // Step 3: Computer Vision Emotion Detection
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 201310.png",
+            translations: {
+              ar: {
+                tab: "03. رصد المشاعر",
+                title: "الرؤية الحاسوبية ورصد المشاعر مع أمان الخصوصية",
+                caption: "تحليل ملامح الوجه فوري في الذاكرة العشوائية (RAM) دون تسجيل أي صورة للحفاظ على سرية المنزل",
+                hotspots: [
+                  { x: 50, y: 28, title: "ضمان الخصوصية 100% في الذاكرة", desc: "معالجة تدفق الكاميرا حصرياً في الرام وحذف الإطارات فورياً بعد استخراج مؤشرات المشاعر.", tech: "In-Memory Zero Storage Privacy" },
+                  { x: 50, y: 48, title: "كاشف الملامح بالذكاء الاصطناعي", desc: "رصد تعابير الابتسامة، الحزن، أو الغضب لتغذية محرك الاستجابة الحركية والنصية.", tech: "Lightweight Facial Expression CNN" },
+                  { x: 50, y: 80, title: "محاكاة التعابير الاختبارية", desc: "أدوات مدمجة لاختبار استجابة النظام للابتسامة أو الحزن قبل تفعيل الكاميرا.", tech: "Emotion Simulation Benchmark" }
+                ]
+              },
+              en: {
+                tab: "03. Emotion Vision",
+                title: "Computer Vision Emotion Tracker with Zero-Data Privacy",
+                caption: "Instant in-RAM facial analysis without persisting frames to safeguard household privacy",
+                hotspots: [
+                  { x: 50, y: 28, title: "100% In-RAM Zero-Retention Privacy", desc: "Camera feeds processed strictly in volatile memory and wiped immediately after inference.", tech: "In-Memory Zero Storage Privacy" },
+                  { x: 50, y: 48, title: "AI Real-time Expression Tracker", desc: "Identifies smiles, confusion, or frowns to dynamically shape conversational tone.", tech: "Lightweight Facial Expression CNN" },
+                  { x: 50, y: 80, title: "Interactive Expression Simulator", desc: "On-demand toggles to preview robot empathy under smile, frown, and anger states.", tech: "Emotion Simulation Benchmark" }
+                ]
+              }
+            }
+          },
+          // Step 4: OmniVoice TTS Voices
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 201259.png",
+            translations: {
+              ar: {
+                tab: "04. نبرات الصوت",
+                title: "محرك الأصوات المتعددة OmniVoice TTS",
+                caption: "توليد أصوات عربية طبيعية بنبرات طفولية متمايزة تلائم القصص والمسابقات والمواساة",
+                hotspots: [
+                  { x: 50, y: 33, title: "صوت BMO الأصلي المرح", desc: "نبرة طفل مرحة وعالية تلائم الألعاب والترحيب اليومي.", tech: "High-Pitch Joyous Neural TTS" },
+                  { x: 50, y: 52, title: "نبرة الودود للقصص الهادئة", desc: "إيقاع صوتي مهدئ مخصص لقصص قبل النوم والآداب اليومية.", tech: "Bedtime Storyteller Acoustic Model" },
+                  { x: 50, y: 69, title: "نبرة الهمس والأسرار اللطيفة", desc: "توليد صوت همس حميمي لمشاركة الأسرار الصغيرة وبناء الثقة مع الطفل.", tech: "Whisper Synthesis Profile" }
+                ]
+              },
+              en: {
+                tab: "04. Voice Engine",
+                title: "OmniVoice Multi-Persona Neural TTS Synthesis",
+                caption: "Lifelike neural voices tailored for childhood play, story narration, and soothing whispers",
+                hotspots: [
+                  { x: 50, y: 33, title: "Original Playful BMO Voice", desc: "High-spirited, energetic pitch optimized for active games and friendly welcomes.", tech: "High-Pitch Joyous Neural TTS" },
+                  { x: 50, y: 52, title: "Calm Storyteller Persona", desc: "Gentle cadence calibrated for bedtime tales and contemplative moral fables.", tech: "Bedtime Storyteller Acoustic Model" },
+                  { x: 50, y: 69, title: "Childlike Whisper Voice", desc: "Soft whispering timbre designed for secret sharing and quiet bonding moments.", tech: "Whisper Synthesis Profile" }
+                ]
+              }
+            }
+          },
+          // Step 5: Badges and Achievements
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 194304.png",
+            translations: {
+              ar: {
+                tab: "05. الأوسمة والمكافآت",
+                title: "منظومة الأوسمة ومحفزات السلوك الإيجابي",
+                caption: "مكافأة السلوكيات الأخلاقية وحل الألغاز بأوسمة شرف ونقاط تزيد الدافعية",
+                hotspots: [
+                  { x: 43, y: 50, title: "وسام بطل الأخلاق والآداب", desc: "مكافأة فورية عند استخدام كلمات التهذيب، التسمية، والتعامل برفق.", tech: "Ethical Dialogue Reinforcement Badge" },
+                  { x: 43, y: 60, title: "وسام الصديق الوفي", desc: "يُمنح للطفل عندما يُبدي اهتماماً بمشاعر الآخرين ويتحدث بلطف.", tech: "Empathy Recognition Achievement" },
+                  { x: 57, y: 50, title: "وسام مستكشف الفضاء", desc: "تتويج إتمام مغامرة المعرفة الفلكية والعلوم الأساسية.", tech: "Quest Milestone Progression" },
+                  { x: 57, y: 60, title: "وسام عبقري الألغاز", desc: "تحفيز التفكير المنطقي وسرعة الاستنتاج عند حل ألغاز BMO.", tech: "Problem-Solving Reward Metric" }
+                ]
+              },
+              en: {
+                tab: "05. Hero Badges",
+                title: "Gamified Badges & Positive Habit Reinforcement",
+                caption: "Rewarding ethical etiquette and problem-solving milestones with unlockable badges",
+                hotspots: [
+                  { x: 43, y: 50, title: "Good Manners & Ethics Badge", desc: "Awarded automatically upon using polite courtesies and caring conduct.", tech: "Ethical Dialogue Reinforcement Badge" },
+                  { x: 43, y: 60, title: "Loyal Friend Honor", desc: "Granted when the child demonstrates empathy and kindness towards others.", tech: "Empathy Recognition Achievement" },
+                  { x: 57, y: 50, title: "Space Explorer Trophy", desc: "Celebrates completing astronomy science quests and learning missions.", tech: "Quest Milestone Progression" },
+                  { x: 57, y: 60, title: "Puzzle Genius Accolade", desc: "Incentivizes logic deduction and rapid cognitive problem solving.", tech: "Problem-Solving Reward Metric" }
+                ]
+              }
+            }
+          }
+        ]
+      },
+
+      // Chapter 2: Smart Parenting & Psychological Dashboard
+      {
+        id: "bmo-parenting",
+        icon: "🛡️",
+        translations: {
+          ar: {
+            tabLabel: "02. لوحة تحكم الوالدين",
+            roleTitle: "منظومة إشراف الوالدين والتوجيه التربوي الذكي",
+            roleSubtitle: "تحليلات النمو المعرفي، رصد المشاعر، ونظام الرقابة الأبوية",
+            lead: "لوحة متابعة استثنائية صُممت لتمكين الآباء والأمهات من فهم عالم أطفالهم النفسي والفكري، وتقديم استشارات تربوية مستخلصة بالذكاء الاصطناعي بناءً على محادثات وأسئلة الطفل.",
+            specs: [
+              { label: "نوع النظام", val: "Smart Parenting Analytics" },
+              { label: "المستخدمون", val: "الآباء والمربون والمشرفون" },
+              { label: "المعمارية", val: "FastAPI • Redis Cache • Postgres" },
+              { label: "الدور", val: "Pedagogical AI Architect" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "توجيهات تربوية ذكية مخصصة للوالدين",
+                desc: "استخلاص نصائح عملية بناءً على أسئلة الطفل اليومية لمساعدة الآباء على مواصلة تحفيز فضوله وتوجيهه بوعي."
+              },
+              {
+                num: "02",
+                title: "الملف النفسي والسلوكي للطفل (AI Psychological Profile)",
+                desc: "تقييم أسلوب تواصل الطفل، ودرجة ارتباطه العاطفي، واهتماماته لاكتشاف مواهبه ومخاوفه مبكراً."
+              },
+              {
+                num: "03",
+                title: "مؤشرات تنمية المهارات المعرفية والعاطفية",
+                desc: "رسوم بيانية حية لقياس التفكير المنطقي، الطلاقة اللغوية، الذكاء العاطفي، والتمسك بالقيم الإيجابية."
+              },
+              {
+                num: "04",
+                title: "ضوابط الأمان وقفل النوم التلقائي (Bedtime Lock)",
+                desc: "تحديد أوقات الشاشة الآمنة، وحزمة القصص الأخلاقية، وإيقاف الروبوت تلقائياً في التاسعة مساءً لنوم هادئ."
+              }
+            ],
+            tech: [
+              "Parental Analytics",
+              "Cognitive Profiler",
+              "Behavioral NLP",
+              "Screen Time Policy",
+              "Child Safety Guardrails",
+              "Bedtime Lock Engine",
+              "Insight Generator",
+              "PostgreSQL Metrics"
+            ]
+          },
+          en: {
+            tabLabel: "02. Parenting Dashboard",
+            roleTitle: "Guardian Intelligence & Developmental Dashboard",
+            roleSubtitle: "Cognitive Growth Analytics, Emotion Tracking & Parental Controls",
+            lead: "An insightful dashboard empowering parents to understand their children's psychological and intellectual development, featuring automated pedagogical tips based on children's natural conversations.",
+            specs: [
+              { label: "System Type", val: "Smart Parenting Analytics" },
+              { label: "Users", val: "Parents, Guardians & Educators" },
+              { label: "Architecture", val: "FastAPI • Redis Cache • Postgres" },
+              { label: "Role", val: "Pedagogical AI Architect" }
+            ],
+            highlights: [
+              {
+                num: "01",
+                title: "Personalized Pedagogical Parenting Guidance",
+                desc: "Synthesizes actionable advice derived from daily child inquiries, guiding parents to nurture curiosity."
+              },
+              {
+                num: "02",
+                title: "Child AI Psychological & Behavioral Profile",
+                desc: "Evaluates conversational patterns, emotional attachments, and topics to uncover talents and anxieties early."
+              },
+              {
+                num: "03",
+                title: "Cognitive & Affective Skill Metrics",
+                desc: "Live tracking bars for logical thinking, language fluency, emotional intelligence, and moral values."
+              },
+              {
+                num: "04",
+                title: "Safety Controls & Bedtime Lock",
+                desc: "Strict screen-time limits, bedtime lockout at 9:00 PM, and curated cultural and moral story bundles."
+              }
+            ],
+            tech: [
+              "Parental Analytics",
+              "Cognitive Profiler",
+              "Behavioral NLP",
+              "Screen Time Policy",
+              "Child Safety Guardrails",
+              "Bedtime Lock Engine",
+              "Insight Generator",
+              "PostgreSQL Metrics"
+            ]
+          }
+        },
+        steps: [
+          // Step 1: Parenting Overview & Controls
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 194235.png",
+            translations: {
+              ar: {
+                tab: "01. نظرة عامة والرقابة",
+                title: "لوحة تحكم الوالدين والمتابعة الذكية",
+                caption: "متابعة وقت التفاعل الآمن، المهارة الأكثر نمواً، والتوجيهات التربوية الذكية",
+                hotspots: [
+                  { x: 37, y: 31, title: "مؤشر التفاعل اليومي الآمن", desc: "احتساب دقائق الحوار لضمان عدم تجاوز الحد اليومي الموصى به طبياً.", tech: "Healthy Screen-Time Gatekeeper" },
+                  { x: 49, y: 31, title: "المهارة الأكثر نمواً (+18%)", desc: "رصد قفزات التفكير المنطقي عبر حل الألغاز والمحادثات العلمية.", tech: "Cognitive Growth Delta Metric" },
+                  { x: 63, y: 31, title: "الحالة العاطفية الغالبة", desc: "تصنيف مشاعر الطفل الغالبة اليوم بناءً على نبرات الصوت والصور.", tech: "Aggregated Sentiment Classifier" },
+                  { x: 50, y: 44, title: "التوجيه التربوي الذكي للوالدين", desc: "نصيحة مخصصة مستخلصة من محادثات الطفل اليومية لدعم الوالدين في النقاش الأسري.", tech: "Pedagogical LLM Advisor" },
+                  { x: 50, y: 64, title: "خيارات الرقابة وقفل النوم", desc: "تفعيل قصص القيم الإسلامية، وتفعيل قفل النوم في 9 مساءً لضمان راحة الطفل.", tech: "Parental Policy Engine" }
+                ]
+              },
+              en: {
+                tab: "01. Overview & Controls",
+                title: "Parent Intelligence & Safety Control Center",
+                caption: "Monitoring healthy screen time, fastest-growing cognitive skills, and pedagogical guidance",
+                hotspots: [
+                  { x: 37, y: 31, title: "Safe Screen Time Monitor", desc: "Tracks conversation minutes to stay well within pediatric guidelines.", tech: "Healthy Screen-Time Gatekeeper" },
+                  { x: 49, y: 31, title: "Fastest Growing Skill (+18%)", desc: "Highlights rapid acceleration in logical problem-solving and puzzle inquiries.", tech: "Cognitive Growth Delta Metric" },
+                  { x: 63, y: 31, title: "Prevailing Emotional Mood", desc: "Aggregated sentiment score reflecting joyful engagement and high spirits.", tech: "Aggregated Sentiment Classifier" },
+                  { x: 50, y: 44, title: "AI Parenting Advice Capsule", desc: "Actionable tips extracted from the child's daily questions to enrich parent-child conversations.", tech: "Pedagogical LLM Advisor" },
+                  { x: 50, y: 64, title: "Bedtime Lock & Safety Toggles", desc: "Automates bedtime sleep lock at 9 PM and curates Islamic moral storytelling packs.", tech: "Parental Policy Engine" }
+                ]
+              }
+            }
+          },
+          // Step 2: Personality & Memory
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 194244.png",
+            translations: {
+              ar: {
+                tab: "02. الشخصية والذاكرة",
+                title: "ملف شخصية الطفل، الذاكرة المستمرة والتحليل النفسي",
+                caption: "تحديد السمات الشخصية المستخلصة، موضوعات الحوار، وسجل الذكريات المحفوظة لدى BMO",
+                hotspots: [
+                  { x: 50, y: 33, title: "السمات الشخصية المستخلصة", desc: "تصنيف السمات الطبيعية مثل: فضولي ومستكشف، ذو خيال واسع.", tech: "Child Persona Extraction" },
+                  { x: 50, y: 50, title: "آخر موضوع نوقش مع BMO", desc: "توثيق المواضيع المطروحة لإبقاء الوالدين على دراية باهتمامات طفلهم.", tech: "Topic Modeling & Dialogue Archiving" },
+                  { x: 50, y: 63, title: "التحليل النفسي والسلوكي (AI Psychological Profile)", desc: "قراءة معمقة لمستوى الذكاء الفطري والارتباط العاطفي الإيجابي للطفل.", tech: "Developmental Behavioral Profiler" },
+                  { x: 50, y: 80, title: "سجل ما يعرفه BMO في ذاكرته", desc: "قاعدة معرفية تراعي خصوصية تفضيلات الطفل، هواياته ومخاوفه لمراعاتها في الحوار.", tech: "Child-Centric Vector Memory Store" }
+                ]
+              },
+              en: {
+                tab: "02. Persona & Memory",
+                title: "Child Persona, AI Long-Term Memory & Psychological Profile",
+                caption: "Extracted personality traits, recent conversation topics, and episodic memory repository",
+                hotspots: [
+                  { x: 50, y: 33, title: "Extracted Personality Traits", desc: "Identifies core attributes such as curious explorer and creative imagination.", tech: "Child Persona Extraction" },
+                  { x: 50, y: 50, title: "Recent Topic Inquiries", desc: "Summarizes recent interests to keep guardians informed on child curiosity.", tech: "Topic Modeling & Dialogue Archiving" },
+                  { x: 50, y: 63, title: "AI Psychological Profile", desc: "In-depth developmental evaluation of communication maturity and emotional attachment.", tech: "Developmental Behavioral Profiler" },
+                  { x: 50, y: 80, title: "Persistent Memory Vault", desc: "Retains child preferences, hobbies, and concerns to deliver tailored empathetic responses.", tech: "Child-Centric Vector Memory Store" }
+                ]
+              }
+            }
+          },
+          // Step 3: Skill Metrics
+          {
+            image: "imgs/BMO/Screenshot 2026-10-01 194251.png",
+            translations: {
+              ar: {
+                tab: "03. مؤشرات المهارات",
+                title: "تحليل تقدم المهارات المعرفية والعاطفية المستخلص",
+                caption: "أشرطة تقدم تفاعلية تقيس التفكير المنطقي، الذكاء العاطفي، الإبداع، والطلاقة اللغوية",
+                hotspots: [
+                  { x: 50, y: 46, title: "التفكير المنطقي وحل الألغاز (85%)", desc: "قياس مهارات الربط السببي واستنتاج الإجابات الصحيحة في ألعاب BMO.", tech: "Logical Reasoning Proficiency Score" },
+                  { x: 50, y: 54, title: "الذكاء العاطفي والتعبير عن المشاعر (90%)", desc: "مؤشر قدرة الطفل على إدراك مشاعره والتعبير عنها بوضوح وثقة.", tech: "Affective Articulation Index" },
+                  { x: 50, y: 63, title: "الإبداع والخيال والقصص (78%)", desc: "تقييم ثراء الأفكار والسيناريوهات المبتكرة التي يؤلفها الطفل مع الروبوت.", tech: "Creative Storytelling Metric" },
+                  { x: 50, y: 72, title: "الطلاقة اللغوية وثراء المفردات (88%)", desc: "رصد تنوع المفردات اللغوية والتراكيب النحوية المستخدمة في الحوار.", tech: "Lexical Diversity & Fluency Tracker" },
+                  { x: 50, y: 81, title: "القيم والآداب وقصص الأنبياء (85%)", desc: "متابعة استيعاب القيم الأخلاقية، الصدق، الأمانة، والآداب اليومية.", tech: "Moral Principles Assimilation Meter" }
+                ]
+              },
+              en: {
+                tab: "03. Skill Progress",
+                title: "Cognitive, Linguistic & Emotional Progress Indicators",
+                caption: "Live progress telemetry benchmarking logic, empathy, creativity, vocabulary, and moral values",
+                hotspots: [
+                  { x: 50, y: 46, title: "Logical Reasoning & Puzzles (85%)", desc: "Evaluates deduction aptitude and problem solving during puzzle challenges.", tech: "Logical Reasoning Proficiency Score" },
+                  { x: 50, y: 54, title: "Emotional Intelligence & Expression (90%)", desc: "Tracks clarity and self-awareness in articulating personal feelings.", tech: "Affective Articulation Index" },
+                  { x: 50, y: 63, title: "Creativity & Imagination (78%)", desc: "Measures story generation complexity and imaginative narrative participation.", tech: "Creative Storytelling Metric" },
+                  { x: 50, y: 72, title: "Linguistic Fluency & Lexicon (88%)", desc: "Monitors vocabulary expansion and expressive sentence structures.", tech: "Lexical Diversity & Fluency Tracker" },
+                  { x: 50, y: 81, title: "Values, Etiquette & Cultural Lore (85%)", desc: "Gauges comprehension of courtesy, honesty, and moral fables.", tech: "Moral Principles Assimilation Meter" }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1977,7 +2433,12 @@ const elements = {
   lightboxDialog: document.getElementById("lightbox-dialog"),
   closeLightboxBtn: document.getElementById("close-lightbox-btn"),
   lightboxImg: document.getElementById("lightbox-img"),
-  lightboxCaption: document.getElementById("lightbox-caption")
+  lightboxCaption: document.getElementById("lightbox-caption"),
+  lightboxZoomBtn: document.getElementById("lightbox-zoom-btn"),
+  lightboxZoomLabel: document.getElementById("lightbox-zoom-label"),
+  lightboxImgContainer: document.getElementById("lightbox-img-container"),
+  tRotateHint: document.getElementById("t-rotate-hint"),
+  tLightboxTouchHint: document.getElementById("t-lightbox-touch-hint")
 };
 
 // AUDIO SYNTHESIZER FOR PAPER SWOOSH
@@ -2034,6 +2495,8 @@ function updateLanguageUI() {
   if (fMoon) fMoon.textContent = t.filterMoon;
   const fWasalna = document.getElementById("t-filter-wasalna");
   if (fWasalna) fWasalna.textContent = t.filterWasalna;
+  const fBmo = document.getElementById("t-filter-bmo");
+  if (fBmo) fBmo.textContent = t.filterBmo;
   document.getElementById("t-btn-collection").textContent = t.btnCollection;
   document.getElementById("t-btn-curator").textContent = t.btnCurator;
   document.getElementById("t-shelf-hint").textContent = t.shelfHint;
@@ -2047,6 +2510,12 @@ function updateLanguageUI() {
   const tapZoomEl = document.getElementById("t-tap-zoom");
   if (tapZoomEl) tapZoomEl.textContent = t.tapZoom;
   document.getElementById("t-footer-ready").textContent = t.footerReady;
+  if (elements.tRotateHint) elements.tRotateHint.textContent = t.rotateHint;
+  if (elements.tLightboxTouchHint) elements.tLightboxTouchHint.textContent = t.lightboxTouchHint;
+  if (elements.lightboxZoomLabel) {
+    const isZoomed = elements.lightboxImg && elements.lightboxImg.classList.contains("zoomed-in");
+    elements.lightboxZoomLabel.textContent = isZoomed ? t.reset1x : t.zoom2x;
+  }
 
   document.getElementById("t-modal-archive-tag").textContent = t.modalArchiveTag;
   document.getElementById("t-modal-archive-title").textContent = t.modalArchiveTitle;
@@ -2403,7 +2872,7 @@ function renderBookshelf() {
         </div>
         ${tapHintHTML}
       `;
-    } else if (proj.isMasterBook) {
+    } else if (proj.id === 'wasalna') {
       card.innerHTML = `
         <div class="book-geometry">
           <div class="book-cover-front">
@@ -2422,6 +2891,37 @@ function renderBookshelf() {
               <div class="wasalna-cover-chapters">
                 ${proj.chapters.map((ch, cIdx) => `
                   <div class="wasalna-cover-ch-row ${cIdx === 0 ? 'active' : ''}">
+                    <span>${ch.icon} ${ch.translations[state.currentLang].tabLabel}</span>
+                    <span>${ch.steps ? ch.steps.length + ' ' + (state.currentLang === 'ar' ? 'شاشات' : 'Screens') : (state.currentLang === 'ar' ? 'قريباً' : 'Soon')}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="book-spine-crease"></div>
+          </div>
+          <div class="book-page-edges"></div>
+        </div>
+        ${tapHintHTML}
+      `;
+    } else if (proj.id === 'bmo') {
+      card.innerHTML = `
+        <div class="book-geometry">
+          <div class="book-cover-front">
+            <div class="modern-bmo-cover">
+              <div class="bmo-cover-top">
+                <span>${proj.code}</span>
+                <span>${proj.year}</span>
+              </div>
+              <div class="bmo-cover-center">
+                <div class="bmo-cover-logo-frame">
+                  <img src="imgs/BMO/logo.png" alt="BMO Robot Logo">
+                </div>
+                <h3 class="bmo-cover-title">${tData.title}</h3>
+                <p class="bmo-cover-subtitle">${tData.subtitle}</p>
+              </div>
+              <div class="bmo-cover-chapters">
+                ${proj.chapters.map((ch, cIdx) => `
+                  <div class="bmo-cover-ch-row ${cIdx === 0 ? 'active' : ''}">
                     <span>${ch.icon} ${ch.translations[state.currentLang].tabLabel}</span>
                     <span>${ch.steps ? ch.steps.length + ' ' + (state.currentLang === 'ar' ? 'شاشات' : 'Screens') : (state.currentLang === 'ar' ? 'قريباً' : 'Soon')}</span>
                   </div>
@@ -2577,49 +3077,50 @@ function loadChapter(chapterIndex, project) {
   const pData = project.translations[state.currentLang];
 
   // Render Left Page: Brand / Spec sheet
-  if (project.isMasterBook) {
-    elements.leftPageContent.innerHTML = `
-      <div class="left-cover-thumb-container">
-        <div class="wasalna-cover-logo-frame" style="width:65px; height:65px; margin-bottom:0.75rem;">
-          <img src="imgs/wesalna/logo/Group 4.svg" alt="Wasalna Logo" style="width:40px; height:30px;">
-        </div>
+  let leftLogoHTML = '';
+  if (project.id === 'moon-academy') {
+    leftLogoHTML = `
+      <div class="moon-cover-logo-frame" style="width:70px; height:40px; margin-bottom:0.75rem;">
+        <img src="imgs/Moon Academy/moon-logo.svg" alt="Moon Academy Logo" style="width:50px; height:30px;">
       </div>
-      <div class="left-spec-sheet">
-        <div class="left-spec-row">
-          <span>${state.currentLang === 'ar' ? 'الإصدار' : 'EDITION'}</span>
-          <strong>${project.code}</strong>
-        </div>
-        <div class="left-spec-row">
-          <span>${state.currentLang === 'ar' ? 'الفصل النشط' : 'ACTIVE CHAPTER'}</span>
-          <strong>${chData.tabLabel}</strong>
-        </div>
-        ${chData.specs ? chData.specs.map(s => `
-          <div class="left-spec-row">
-            <span>${s.label}</span>
-            <strong>${s.val}</strong>
-          </div>
-        `).join('') : ''}
+    `;
+  } else if (project.id === 'wasalna') {
+    leftLogoHTML = `
+      <div class="wasalna-cover-logo-frame" style="width:65px; height:65px; margin-bottom:0.75rem;">
+        <img src="imgs/wesalna/logo/Group 4.svg" alt="Wasalna Logo" style="width:40px; height:30px;">
+      </div>
+    `;
+  } else if (project.id === 'bmo') {
+    leftLogoHTML = `
+      <div class="bmo-cover-logo-frame" style="width:65px; height:65px; margin-bottom:0.75rem; border-radius:16px; background: rgba(92,219,211,0.12); display:grid; place-items:center; border: 1.5px solid rgba(92,219,211,0.4); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <img src="imgs/BMO/logo.png" alt="BMO Robot Logo" style="width:42px; height:45px; object-fit:contain;">
       </div>
     `;
   } else {
-    elements.leftPageContent.innerHTML = `
-      <div class="left-cover-thumb-container">
-        <img src="${project.coverImg}" alt="${pData.title}" class="left-cover-thumb-img">
-      </div>
-      <div class="left-spec-sheet">
-        <div class="left-spec-row">
-          <span>${state.currentLang === 'ar' ? 'الإصدار' : 'EDITION'}</span>
-          <strong>${project.code}</strong>
-        </div>
-        ${chData.specs ? chData.specs.map(s => `
-          <div class="left-spec-row">
-            <span>${s.label}</span>
-            <strong>${s.val}</strong>
-          </div>
-        `).join('') : ''}
-      </div>
-    `;
+    leftLogoHTML = `<img src="${project.coverImg}" alt="${pData.title}" class="left-cover-thumb-img">`;
   }
+
+  elements.leftPageContent.innerHTML = `
+    <div class="left-cover-thumb-container">
+      ${leftLogoHTML}
+    </div>
+    <div class="left-spec-sheet">
+      <div class="left-spec-row">
+        <span>${state.currentLang === 'ar' ? 'الإصدار' : 'EDITION'}</span>
+        <strong>${project.code}</strong>
+      </div>
+      <div class="left-spec-row">
+        <span>${state.currentLang === 'ar' ? 'الفصل النشط' : 'ACTIVE CHAPTER'}</span>
+        <strong>${chData.tabLabel}</strong>
+      </div>
+      ${chData.specs ? chData.specs.map(s => `
+        <div class="left-spec-row">
+          <span>${s.label}</span>
+          <strong>${s.val}</strong>
+        </div>
+      `).join('') : ''}
+    </div>
+  `;
 
   // Update ribbon chapter label
   const pageChapterTag = document.getElementById("page-chapter-tag");
@@ -2668,7 +3169,8 @@ function loadChapter(chapterIndex, project) {
 
   // Render Tech Pills
   elements.panelTechList.innerHTML = "";
-  chData.tech.forEach(t => {
+  const techList = chData.tech || chData.techStack || [];
+  techList.forEach(t => {
     const tag = document.createElement("span");
     tag.className = "tech-tag";
     tag.textContent = t;
@@ -2755,7 +3257,7 @@ function loadStep(stepIndex, chapter) {
   }, 120);
 
   // Update Plate & Page Num
-  elements.pagePlateTag.textContent = sData.plate;
+  elements.pagePlateTag.textContent = sData.plate || (state.currentLang === 'ar' ? `لوحة ${stepIndex + 1}` : `PLATE ${stepIndex + 1}`);
   elements.pageNumDisp.textContent = `Pg. ${stepIndex + 1} / ${chapter.steps.length}`;
 
   // Update sliding spread tabs (shows exactly 3 sliding tabs)
@@ -2965,12 +3467,84 @@ function setupEventListeners() {
     elements.hotspotsBtnLabel.textContent = state.areHotspotsVisible ? t.hideHotspots : t.showHotspots;
   });
 
-  // Fullscreen Preview Lightbox
+  // Fullscreen Preview Lightbox with 2x Pan & Zoom
+  function setLightboxZoom(zoomIn) {
+    const t = I18N[state.currentLang];
+    if (zoomIn) {
+      elements.lightboxImg.classList.add("zoomed-in");
+      if (elements.lightboxZoomLabel) elements.lightboxZoomLabel.textContent = t.reset1x;
+      if (elements.lightboxImgContainer) {
+        requestAnimationFrame(() => {
+          elements.lightboxImgContainer.scrollLeft = (elements.lightboxImg.scrollWidth - elements.lightboxImgContainer.clientWidth) / 2;
+          elements.lightboxImgContainer.scrollTop = (elements.lightboxImg.scrollHeight - elements.lightboxImgContainer.clientHeight) / 2;
+        });
+      }
+    } else {
+      elements.lightboxImg.classList.remove("zoomed-in");
+      if (elements.lightboxZoomLabel) elements.lightboxZoomLabel.textContent = t.zoom2x;
+    }
+  }
+
+  function toggleLightboxZoom() {
+    const isZoomed = elements.lightboxImg.classList.contains("zoomed-in");
+    setLightboxZoom(!isZoomed);
+  }
+
+  if (elements.lightboxZoomBtn) {
+    elements.lightboxZoomBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleLightboxZoom();
+    });
+  }
+
+  // Double-tap or double-click to toggle zoom
+  let lastTouchEndTime = 0;
+  if (elements.lightboxImg) {
+    elements.lightboxImg.addEventListener("touchend", (e) => {
+      const now = Date.now();
+      if (now - lastTouchEndTime < 320) {
+        e.preventDefault();
+        toggleLightboxZoom();
+      }
+      lastTouchEndTime = now;
+    });
+
+    elements.lightboxImg.addEventListener("dblclick", () => {
+      toggleLightboxZoom();
+    });
+  }
+
+  // Desktop click-and-drag panning when zoomed
+  if (elements.lightboxImgContainer) {
+    let isMouseDown = false;
+    let dragStartX = 0, dragStartY = 0, startScrollLeft = 0, startScrollTop = 0;
+
+    elements.lightboxImgContainer.addEventListener("mousedown", (e) => {
+      if (!elements.lightboxImg.classList.contains("zoomed-in")) return;
+      isMouseDown = true;
+      dragStartX = e.pageX - elements.lightboxImgContainer.offsetLeft;
+      dragStartY = e.pageY - elements.lightboxImgContainer.offsetTop;
+      startScrollLeft = elements.lightboxImgContainer.scrollLeft;
+      startScrollTop = elements.lightboxImgContainer.scrollTop;
+    });
+
+    window.addEventListener("mouseup", () => { isMouseDown = false; });
+    elements.lightboxImgContainer.addEventListener("mousemove", (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - elements.lightboxImgContainer.offsetLeft;
+      const y = e.pageY - elements.lightboxImgContainer.offsetTop;
+      elements.lightboxImgContainer.scrollLeft = startScrollLeft - (x - dragStartX);
+      elements.lightboxImgContainer.scrollTop = startScrollTop - (y - dragStartY);
+    });
+  }
+
   elements.btnFullscreenPreview.addEventListener("click", () => {
     const project = getFilteredProjects()[state.activeProjectIndex];
     const chapter = project.chapters[state.activeChapterIndex];
     const step = chapter.steps[state.activeStepIndex];
     if (step) {
+      setLightboxZoom(false);
       elements.lightboxImg.src = step.image;
       elements.lightboxCaption.textContent = `${chapter.translations[state.currentLang].roleTitle} — ${step.translations[state.currentLang].title}`;
       elements.lightboxDialog.showModal();
@@ -2978,6 +3552,7 @@ function setupEventListeners() {
   });
 
   elements.closeLightboxBtn.addEventListener("click", () => {
+    setLightboxZoom(false);
     elements.lightboxDialog.close();
   });
 

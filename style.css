@@ -257,6 +257,20 @@ body {
   box-shadow: 0 0 15px rgba(52, 209, 143, 0.35);
 }
 
+.cat-pill.bmo-pill {
+  color: #5cdbd3;
+  background: rgba(92, 219, 211, 0.08);
+  border: 1px solid rgba(92, 219, 211, 0.25);
+}
+
+.cat-pill.bmo-pill:hover,
+.cat-pill.bmo-pill.active {
+  background: rgba(92, 219, 211, 0.22);
+  color: #fff;
+  border-color: #5cdbd3;
+  box-shadow: 0 0 15px rgba(92, 219, 211, 0.35);
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -646,6 +660,119 @@ html[dir="rtl"] .moon-cover-title {
 
 .moon-cover-ch-row.active {
   color: rgba(0, 220, 180, 0.95);
+  font-weight: 700;
+}
+
+/* ── BMO Robot Book Cover ────────────────────────────── */
+.modern-bmo-cover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, #06191c 0%, #041215 50%, #072228 100%);
+  border: 2px solid rgba(92, 219, 211, 0.4);
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.modern-bmo-cover::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(92, 219, 211, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.modern-bmo-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(82, 196, 26, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bmo-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #5cdbd3;
+  position: relative;
+  z-index: 1;
+}
+
+.bmo-cover-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1.25rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bmo-cover-logo-frame {
+  width: 82px;
+  height: 82px;
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(92, 219, 211, 0.22) 0%, rgba(6, 25, 28, 0.85) 100%);
+  border: 1.5px solid rgba(92, 219, 211, 0.45);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.15rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 18px rgba(92, 219, 211, 0.25);
+}
+
+.bmo-cover-logo-frame img {
+  width: 58px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.bmo-cover-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 0 15px rgba(92, 219, 211, 0.3);
+}
+
+.bmo-cover-subtitle {
+  font-size: 0.8rem;
+  color: #87e8de;
+  line-height: 1.45;
+}
+
+.bmo-cover-chapters {
+  border-top: 1px solid rgba(92, 219, 211, 0.25);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bmo-cover-ch-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.bmo-cover-ch-row.active {
+  color: #5cdbd3;
   font-weight: 700;
 }
 
@@ -2102,50 +2229,151 @@ html[dir="rtl"] .dossier-line {
   color: var(--accent-gold-light);
 }
 
-/* Lightbox Modal */
+/* Lightbox Modal: Advanced Pan & Zoom */
 .lightbox-dialog {
-  max-width: 95vw;
-  max-height: 95vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .lightbox-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #0d0c0a;
-  border-radius: var(--radius-md);
+  background: rgba(10, 9, 8, 0.98);
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: none;
+}
+
+.lightbox-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: rgba(18, 16, 14, 0.95);
+  border-bottom: 1px solid rgba(207, 168, 114, 0.2);
+  z-index: 25;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lightbox-rotate-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  color: var(--accent-gold-light);
+  opacity: 0.9;
+}
+
+html[dir="rtl"] .lightbox-rotate-hint {
+  font-family: var(--font-ar);
+}
+
+.lightbox-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lightbox-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(207, 168, 114, 0.18);
+  border: 1px solid rgba(207, 168, 114, 0.45);
+  color: var(--accent-gold-light);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-zoom-btn:hover {
+  background: var(--accent-gold);
+  color: #161412;
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 1.5rem;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  z-index: 20;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.lightbox-image-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #060a10;
+  position: relative;
+  touch-action: pan-x pan-y;
+  cursor: grab;
 }
 
 .lightbox-image {
-  max-width: 92vw;
-  max-height: 82vh;
+  max-width: 95vw;
+  max-height: 78vh;
   object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s ease;
+  transform-origin: center center;
+  user-select: none;
+}
+
+.lightbox-image.zoomed-in {
+  max-width: none !important;
+  max-height: none !important;
+  width: 190% !important;
+  height: auto !important;
+  cursor: move;
+}
+
+.lightbox-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.25rem;
+  background: rgba(18, 16, 14, 0.95);
+  border-top: 1px solid rgba(207, 168, 114, 0.15);
+  z-index: 25;
+  flex-shrink: 0;
 }
 
 .lightbox-caption {
-  padding: 1rem 1.5rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent-gold-light);
+}
+
+.lightbox-touch-hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 /* =====================================================================
@@ -2204,17 +2432,27 @@ html, body {
   }
 
   .flipbook-main-row {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    gap: 1.75rem;
   }
 
   .editorial-panel {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     order: 2;
   }
 
   .book-stage-container {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     order: 1;
   }
 
@@ -2390,17 +2628,30 @@ html, body {
 
   /* Opened Book Folio */
   .flipbook-view {
-    padding: 0.85rem 0.65rem 3rem;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    padding: 0.75rem 0.5rem 3rem !important;
     gap: 1.5rem;
   }
 
   .flipbook-main-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    gap: 1.25rem;
   }
 
   .book-stage-container {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .book-stage-top-controls {
@@ -2408,10 +2659,15 @@ html, body {
     align-items: stretch;
     gap: 0.65rem;
     margin-bottom: 0.85rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .back-to-shelf-btn {
-    width: 100%;
+    width: 100% !important;
+    box-sizing: border-box !important;
     justify-content: center;
     padding: 0.55rem 1rem;
     font-size: 0.76rem;
@@ -2419,7 +2675,9 @@ html, body {
   }
 
   .inside-book-roles-tabs {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     display: flex;
     gap: 0.4rem;
     overflow-x: auto;
@@ -2446,8 +2704,9 @@ html, body {
     transform: none !important;
     width: 100% !important;
     max-width: 100% !important;
-    overflow: hidden;
-    box-sizing: border-box;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .book-hardcover-opened,
@@ -2457,12 +2716,14 @@ html, body {
     height: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
     background: var(--bg-paper);
     padding: 0 !important;
     margin: 0 auto !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   html[dir="rtl"] .book-hardcover-opened.single-page-folio {
@@ -2475,13 +2736,14 @@ html, body {
     height: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
     padding: 0.75rem 0.65rem 0.75rem !important;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-    box-sizing: border-box;
-    overflow: hidden;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .book-edge-stack {
@@ -2491,6 +2753,8 @@ html, body {
   .page-header-ribbon {
     margin-bottom: 0.25rem;
     padding-bottom: 0.35rem;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .ribbon-brand-group {
@@ -2513,27 +2777,30 @@ html, body {
   .screenshot-canvas-wrapper {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
     aspect-ratio: 16 / 9.5;
     min-height: 180px;
     max-height: 48vh;
     border-radius: 6px;
     cursor: pointer;
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
     background: #060b13 !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   .screenshot-frame {
     width: 100% !important;
     height: 100% !important;
+    min-width: 0 !important;
     position: relative;
     background: #060b13 !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .active-screenshot {
@@ -2722,19 +2989,27 @@ html, body {
     gap: 0.45rem !important;
     margin: 0.4rem 0 0.75rem !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .spec-strip-item {
-    padding: 0.45rem 0.6rem !important;
+    padding: 0.45rem 0.55rem !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .spec-strip-label {
     font-size: 0.62rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   .spec-strip-val {
     font-size: 0.72rem !important;
     word-break: break-word !important;
+    line-height: 1.3 !important;
   }
 
   .panel-actions {
@@ -2840,7 +3115,7 @@ html, body {
     padding: 1rem;
   }
 
-  /* Lightbox */
+  /* Lightbox Mobile Adjustments */
   .lightbox-dialog {
     padding: 0;
     max-width: 100vw;
@@ -2851,27 +3126,42 @@ html, body {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
-    justify-content: center;
     border: none;
   }
 
-  .lightbox-image {
-    max-width: 96vw;
-    max-height: 80vh;
+  .lightbox-top-bar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .lightbox-rotate-hint {
+    font-size: 0.68rem;
+    gap: 0.3rem;
+  }
+
+  .lightbox-zoom-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
   }
 
   .lightbox-close {
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    font-size: 1.6rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .lightbox-footer-bar {
+    padding: 0.5rem 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 
   .lightbox-caption {
-    font-size: 0.78rem;
-    padding: 0.75rem 1rem;
-    text-align: center;
+    font-size: 0.76rem;
+  }
+
+  .lightbox-touch-hint {
+    font-size: 0.66rem;
   }
 }
 
@@ -2901,29 +3191,39 @@ html, body {
   }
 
   .modern-moon-cover,
-  .modern-wasalna-cover {
+  .modern-wasalna-cover,
+  .modern-bmo-cover {
     padding: 1.35rem 1.1rem;
   }
 
   .moon-cover-logo-frame,
-  .wasalna-cover-logo-frame {
-    width: 46px;
-    height: 46px;
+  .wasalna-cover-logo-frame,
+  .bmo-cover-logo-frame {
+    width: 48px;
+    height: 48px;
     margin-bottom: 0.75rem;
   }
 
+  .bmo-cover-logo-frame img {
+    width: 36px;
+    height: 38px;
+  }
+
   .moon-cover-title,
-  .wasalna-cover-title {
+  .wasalna-cover-title,
+  .bmo-cover-title {
     font-size: 1.45rem;
   }
 
   .moon-cover-subtitle,
-  .wasalna-cover-subtitle {
+  .wasalna-cover-subtitle,
+  .bmo-cover-subtitle {
     font-size: 0.75rem;
   }
 
   .moon-cover-chapters,
-  .wasalna-cover-chapters {
+  .wasalna-cover-chapters,
+  .bmo-cover-chapters {
     gap: 0.35rem;
     margin-top: 0.5rem;
   }
